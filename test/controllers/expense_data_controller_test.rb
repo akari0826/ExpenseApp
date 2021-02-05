@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class ExpenseDataControllerTest < ActionDispatch::IntegrationTest
+class ExpensesControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get expense_data_new_url
+    get expenses_new_url
     assert_response :success
   end
 

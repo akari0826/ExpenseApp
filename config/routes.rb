@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'expense_data/new'
   get 'sessions/new'
   
   root 'pages#index'
@@ -9,6 +8,8 @@ Rails.application.routes.draw do
   post    '/login',   to: 'sessions#create'
   delete  '/logout',  to: 'sessions#destroy'
   
-  resources :users
-  resources :expense_data
+  resources :users, :expenses
+  namespace :admin do
+    resources :expenses
+  end
 end

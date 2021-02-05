@@ -11,5 +11,6 @@ class User < ApplicationRecord
   
   has_secure_password
   
-  has_many :expense_data
+  has_many :expenses
+  has_many_attached :attached_files
 end

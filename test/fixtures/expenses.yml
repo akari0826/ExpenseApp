@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  application_date: 2021-01-27
+  expense_category_id: 1
+  expense_datail: MyText
+  expense: 1
+  attached_file: MyString
+
+two:
+  user_id: 1
+  application_date: 2021-01-27
+  expense_category_id: 1
+  expense_datail: MyText
+  expense: 1
+  attached_file: MyString

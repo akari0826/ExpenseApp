@@ -21,20 +21,17 @@
        <ul class="nav navbar-nav navbar-right">
          <% if logged_in? %>
            <li>
-             <%= link_to logout_path, method: :delete do %>
-               <%= image_tag "icons/logout.png" %>
-             <% end %>
+             <%= link_to '経費登録', new_expense_path %>
+           </li>
+           <li>
+             <%= link_to 'ログアウト', logout_path, method: :delete, class: 'text-dark' %>
            </li>
          <% else %>
            <li>
-             <%= link_to new_user_path do %>
-               <%= image_tag "icons/register.png" %>
-             <% end %>
+             <%= link_to '新規登録', new_user_path %>
            </li>
            <li>
-             <%= link_to login_path do %>
-               <%= image_tag "icons/login.png" %>
-             <% end %>
+             <%= link_to 'ログイン', login_path %>
             </li>
          <% end %>
        </ul>
@@ -45,8 +42,7 @@
     
     <script>
       $(fundtion(){
-        $('.alert').fadeOut(3000);
-        
+        $(".alert").fadeOut(5000);
       });
     </script>
   </body>

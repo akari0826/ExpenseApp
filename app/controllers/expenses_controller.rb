@@ -20,6 +20,20 @@ class ExpensesController < ApplicationController
   def show
     @expense = Expense.find(params[:id])
   end
+  
+  def edit
+    @expense = Expense.find(params[:id])
+  end
+  
+  def update
+    @expense = Expense.find(params[:id])
+    if @expense.update(expense_params)
+      redirect_to expense_url, success: '経費データ更新に成功しました'
+    else
+      flash.now[:danger] = '経費データ更新に失敗しました'
+      render :edit
+    end
+  end
     
   private
   def expense_params

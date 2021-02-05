@@ -11,6 +11,7 @@
             <th>経費詳細</th>
             <th>金額</th>
             <th>添付ファイル</th>
+            <th></th>
           </tr>
         </thead>
           <tbody>
@@ -27,6 +28,10 @@
                       <%= image_tag "icons/attached_file.png" %>
                     <% end %>
                   <% end %> 
+                </td>
+                <td>
+                  <%= link_to "編集", edit_expense_path(@expense) %>
+                  <%= link_to "削除", expense_path, method: :delete %>
                 </td>
             </tr>
           </tbody>

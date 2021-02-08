@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   
   resources :users, :expenses
   namespace :admin do
-    resources :expenses
+    resources :users, :expenses
   end
 end

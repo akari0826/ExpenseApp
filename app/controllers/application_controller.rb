@@ -26,4 +26,9 @@ class ApplicationController < ActionController::Base
       redirect_to("/login")
     end
   end
+  
+  private
+  def if_not_admin
+    redirect_to root_url unless current_user.admin?
+  end
 end

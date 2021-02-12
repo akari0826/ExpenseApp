@@ -1,7 +1,7 @@
 <div class="expense-new-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-offset-4 col-md-4">
         <h1 class="text-center">経費データ登録</h1>
         <%= form_with model: @expense, local: true do |f| %>
           <div class="form-group">
@@ -11,7 +11,7 @@
           
           <div class="form-group">
             <%= f.label :経費カテゴリ %>
-            <%= f.select :expense_category_id, [ ["旅費交通費", 1],["", 2] ], prompt: "選択してください" %>
+            <%= f.select :expense_category_id, {'旅費交通費': 1, '消耗品費': 2, '接待交際費': 3, '雑費': 4}, { prompt: "選択してください" }, { class: 'form-control' } %>
           </div>
           
           <div class="form-group">

@@ -24,14 +24,17 @@
              <%= link_to 'ユーザ一覧', admin_users_path %>
            </li>
            <li>
-             <%= link_to 'ログアウト', logout_path, method: :delete, class: 'text-dark' %>
+             <%= link_to '経費一覧', admin_expenses_path %>
+           </li>
+           <li>
+             <%= link_to 'ログアウト', logout_path, method: :delete %>
             </li>
          <% elsif logged_in? %>
            <li>
              <%= link_to '経費登録', new_expense_path %>
            </li>
            <li>
-             <%= link_to 'ログアウト', logout_path, method: :delete, class: 'text-dark' %>
+             <%= link_to 'ログアウト', logout_path, method: :delete %>
            </li>
          <% else %>
            <li>
@@ -44,7 +47,7 @@
        </ul>
        <ul class="nav navbar-nav mr-auto">
          <% if logged_in? %>
-         <span class="navbar-brand md-0">経費精算システム</span>
+           <span class="navbar-brand md-0">経費精算システム</span>
          <% end %>
        </ul>
       </div> 

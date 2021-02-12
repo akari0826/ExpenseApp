@@ -22,7 +22,7 @@
                 <td><%= expense.user.name %></td>
                 <td><%= expense.expense_category_id %></td>
                 <td><%= expense.expense_detail %></td>
-                <td><%= expense.expense %></td>
+                <td><%= expense.expense %><p style="display:inline">円</p></td>
                 <td>
                   <% if expense.attached_file.attached? %>
                     <%= link_to expense.attached_file do %>

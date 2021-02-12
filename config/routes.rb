@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   post    '/login',   to: 'sessions#create'
   delete  '/logout',  to: 'sessions#destroy'
   
-  resources :users, :expenses
+  resources :users, only: [:new, :create]
+  resources :expenses
   namespace :admin do
     resources :users
     resources :expenses do

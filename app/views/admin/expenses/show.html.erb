@@ -10,7 +10,9 @@
             <th>経費カテゴリ</th>
             <th>経費詳細</th>
             <th>金額</th>
+            <th>ステータス</th>
             <th>添付ファイル</th>
+            <th></th>
             <th></th>
           </tr>
         </thead>
@@ -23,6 +25,13 @@
                 <td><%= @expense.expense_detail %></td>
                 <td><%= @expense.expense %></td>
                 <td>
+                  <% if @expense.approval == true %>
+                    <p1>承認済</p1>
+                  <% else %>
+                    <p2>未承認</p2>
+                  <% end %>
+                </td>
+                <td>
                   <% if @expense.attached_file.attached? %>
                     <%= link_to @expense.attached_file do %>
                       <%= image_tag "icons/attached_file.png" %>
@@ -31,7 +40,10 @@
                 </td>
                 <td>
                   <%= link_to "編集", edit_admin_expense_path(@expense) %>
-                  <%= link_to "削除", admin_expense_path, method: :delete %>
+                  <%= link_to "削除", admin_expense_path, method: :delete, data: {confirm: "削除してよろしいですか？"} %>
+                </td>
+                <td>
+                  <%= button_to "承認", approval_admin_expense_path(@expense), method: :get %>
                 </td>
             </tr>
           </tbody>

@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :set_current_user
+  helper_method :current_user, :logged_in?, :current_user?
+  add_flash_types :success, :info, :warning, :danger
+  
+  
   def set_current_user
     @current_user = User.find_by(id: session[:user_id])
   end
-  
-  add_flash_types :success, :info, :warning, :danger
-  
-  helper_method :current_user, :logged_in?
   
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
   
   def logged_in?
     !current_user.nil?
+  end
+  
+  def current_user?(user)
+    user == current_user
   end
   
   def authenticate_user

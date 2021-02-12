@@ -34,6 +34,11 @@ class ExpensesController < ApplicationController
       render :edit
     end
   end
+  
+  def destroy
+    Expense.find(params[:id]).destroy
+    redirect_to expenses_url, success: '経費データを削除しました'
+  end
     
   private
   def expense_params

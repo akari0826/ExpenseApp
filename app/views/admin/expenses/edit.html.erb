@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">経費データ編集</h1>
-        <%= form_with model:@expense, url:admin_expense_path, local: true do |f| %>
+        <%= form_with model:@expense, url: admin_expense_path, local: true do |f| %>
           <div class="form-group">
             <%= f.label :申請日 %>
             <%= f.date_field :application_date, class: 'form-control' %>

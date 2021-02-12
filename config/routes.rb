@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   
   resources :users, :expenses
   namespace :admin do
-    resources :users, :expenses
+    resources :users
+    resources :expenses do
+      member do
+        get 'approval'
+      end
+    end  
   end
 end

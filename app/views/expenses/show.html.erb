@@ -31,7 +31,7 @@
                 </td>
                 <td>
                   <%= link_to "編集", edit_expense_path(@expense) %>
-                  <%= link_to "削除", expense_path, method: :delete %>
+                  <%= link_to "削除", expense_path, method: :delete, data: {confirm: "削除してよろしいですか？"} %>
                 </td>
             </tr>
           </tbody>

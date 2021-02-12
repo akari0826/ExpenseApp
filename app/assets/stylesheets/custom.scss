@@ -90,6 +90,14 @@ h1 {
   img {
     height: 20px;
   }
+  
+  p1 {
+    color: #008000;
+  }
+  
+  p2 {
+    color: #ff0000;
+  }
 }
 
 .expense-detail-wrapper {
@@ -103,4 +111,20 @@ h1 {
 
 .expense-edit-wrapper {
   padding-top: 200px;
+}
+
+.user-index-wrapper {
+  padding-top: 70px;
+  background-color: #fff;
+}
+
+.users-edit-wrapper {
+  
+  .users-edit-container {
+    padding-top: 220px;
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+  }
 }

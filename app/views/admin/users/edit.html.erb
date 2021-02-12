@@ -1,0 +1,21 @@
+<div class="users-edit-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4 users-edit-container">
+        <h1 class="text-center text-dark">ユーザ編集</h1>
+        <%= form_with model: @user, url: admin_user_path, local: true do |f| %>
+          <div class="form-group">
+            <%= f.label :名前, class: 'text-dark' %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :メールアドレス, class: 'text-dark' %>
+            <%= f.text_field :email, class: 'form-control' %>
+          </div>
+          
+          <%= f.submit "更新", class: 'btn-block btn-info' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

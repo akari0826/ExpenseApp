@@ -7,5 +7,6 @@ class Expense < ApplicationRecord
   validates :attached_file, presence: true
   
   belongs_to :user
+  belongs_to :expense_category
   has_one_attached :attached_file
 end

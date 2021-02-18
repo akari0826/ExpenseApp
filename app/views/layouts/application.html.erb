@@ -27,11 +27,20 @@
              <%= link_to '経費一覧', admin_expenses_path %>
            </li>
            <li>
+             <%= link_to '経費カテゴリ管理', expense_categories_path %>
+           </li>
+           <li>
              <%= link_to 'ログアウト', logout_path, method: :delete %>
             </li>
          <% elsif logged_in? %>
            <li>
+             <%= link_to '経費一覧', expenses_path %>
+           </li>
+           <li>
              <%= link_to '経費登録', new_expense_path %>
+           </li>
+           <li>
+             <%= link_to '経費カテゴリ管理', expense_categories_path %>
            </li>
            <li>
              <%= link_to 'ログアウト', logout_path, method: :delete %>

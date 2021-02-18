@@ -2,7 +2,7 @@ class Admin::UsersController < ApplicationController
   before_action :if_not_admin
   
   def index
-    @users = User.all
+    @users = User.includes(:expenses).search(params[:search])
   end
   
   def edit
@@ -11,7 +11,7 @@ class Admin::UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-    if @user.update!(user_params)
+    if @user.update(user_params)
       redirect_to admin_users_url, success: 'ユーザ更新に成功しました'
     else
       flash.now[:danger] = 'ユーザ更新に失敗しました'

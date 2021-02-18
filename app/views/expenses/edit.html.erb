@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-offset-4 col-md-4">
         <h1 class="text-center">経費データ編集</h1>
-        <%= form_with model:@expense, local: true do |f| %>
+        <%= form_with model: @expense, local: true do |f| %>
           <div class="form-group">
             <%= f.label :申請日 %>
             <%= f.date_field :application_date, class: 'form-control' %>
@@ -11,7 +11,7 @@
           
           <div class="form-group">
             <%= f.label :経費カテゴリ %>
-            <%= f.select :expense_category_id, {'旅費交通費': 1, '消耗品費': 2, '接待交際費': 3, '雑費': 4}, { prompt: "選択してください" }, { class: 'form-control' } %>
+            <%= f.collection_select :expense_category_id, ExpenseCategory.all, :id, :name, { prompt: "選択してください" }, class: 'form-control' %>
           </div>
           
           <div class="form-group">

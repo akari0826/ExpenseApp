@@ -1,0 +1,18 @@
+<div class="category-edit-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4 category-edit-container">
+        <h1 class="text-center text-dark">経費カテゴリ編集</h1>
+        <br>
+        <%= form_with model: @expense_category, local: true do |f| %>
+          <div class="form-group">
+            <%= f.label :経費名称, class: 'text-dark' %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+          
+          <%= f.submit "更新", class: 'btn-block btn-info' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

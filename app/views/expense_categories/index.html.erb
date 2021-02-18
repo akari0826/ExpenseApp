@@ -1,0 +1,28 @@
+<div class="category-index-wrapper">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4 container">
+      <br>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr class="table-info">
+              <th>No.</th>
+              <th>経費名称</th>
+              <th></th>
+            </tr>
+          </thead>
+          <% @expense_categories.each do |expense_category| %>
+            <tbody>
+              <tr>
+                <th scope="row"><%= expense_category.id %></th>
+                  <td><%= expense_category.name %></td>
+                  <td>
+                   <%= button_to "詳細", expense_category_path(expense_category), method: :get %>
+                  </td>
+              </tr>
+            </tbody>
+          <% end %>
+        </table>
+        <%= link_to "経費カテゴリ登録", new_expense_category_path %>
+    </div>
+  </div>
+</div>

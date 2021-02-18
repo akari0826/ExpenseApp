@@ -3,7 +3,7 @@ class Admin::ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update, :approval]
   
   def index
-    @expenses = Expense.all
+    @expenses = Expense.includes(:user)
   end
   
   def show
@@ -29,8 +29,16 @@ class Admin::ExpensesController < ApplicationController
   def approval
     if @expense.approval == true
       @expense.approval = false
+      
+      @user = Expense.find(params[:id]).user #経費を登録したユーザを出す
+      UserMailer.with(user: @user).approval_cancellation_email.deliver
+      
     else
       @expense.approval = true
+      
+      @user = Expense.find(params[:id]).user
+      UserMailer.with(user: @user).approval_email.deliver
+      
     end
     
     @expense.save

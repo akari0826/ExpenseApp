@@ -12,6 +12,10 @@ class ExpensesController < ApplicationController
   def create
     @expense = current_user.expenses.new(expense_params)
     if @expense.save
+      
+      @user = User.find_by(admin: true) #管理者adminをtrueで出す
+      UserMailer.with(user: @user).application_email.deliver
+      
       redirect_to expenses_url, success: '経費データ登録に成功しました'
     else
       flash.now[:danger] = '経費データ登録に失敗しました'
@@ -27,6 +31,10 @@ class ExpensesController < ApplicationController
   
   def update
     if @expense.update(expense_params)
+      
+      @user = User.find_by(admin: true) 
+      UserMailer.with(user: @user).application_email.deliver
+      
       redirect_to expense_url, success: '経費データ更新に成功しました'
     else
       flash.now[:danger] = '経費データ更新に失敗しました'

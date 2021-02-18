@@ -1,0 +1,26 @@
+<div class="category-show-wrapper">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4 container">
+      <br>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr class="table-info">
+              <th>No.</th>
+              <th>経費名称</th>
+              <th></th>
+            </tr>
+          </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><%= @expense_category.id %></th>
+                  <td><%= @expense_category.name %></td>
+                  <td>
+                    <%= link_to "編集", edit_expense_category_path(@expense_category) %>
+                    <%= link_to "削除", expense_category_path, method: :delete, data: {confirm: "削除してよろしいですか？"} %>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>

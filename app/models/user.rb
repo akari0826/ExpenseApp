@@ -11,4 +11,12 @@ class User < ApplicationRecord
   
   has_many :expenses
   has_many_attached :attached_files
+  
+  def self.search(search)
+    if search
+      User.where(['name LIKE ?', "%#{search}%"])
+    else
+      User.all
+    end
+  end
 end

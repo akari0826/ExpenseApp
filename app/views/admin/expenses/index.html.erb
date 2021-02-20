@@ -1,7 +1,50 @@
 <div class="expense-index-wrapper">
   <div class="container">
+    
+      <h2>経費データ検索</h2>
+        <%= form_with url: admin_expenses_path, method: :get, local: true do |f| %>
+          <div class="row">
+            
+            <div class="form-group form-inline">
+              <%= f.label :申請日 %>
+              <%= f.date_field :search, class: "form-control" %>
+              <%= f.label :〜 %>
+              <%= f.date_field :search, class: "form-control" %>
+            </div>
+          
+            <div class="form-group form-inline">
+              <%= f.label :申請者 %>
+              <%= f.text_field :search, class: "form-control" %>
+            </div>
+            
+            <div class="form-group form-inline">
+              <%= f.label :経費カテゴリ %>
+              <%= f.collection_select :expense_category_id, ExpenseCategory.all, :id, :name, { prompt: "選択してください" }, class: "form-control" %>
+            </div>
+            
+            <div class="form-group form-inline">
+              <%= f.label :経費詳細 %>
+              <%= f.text_area :expense_detail, class: "form-control" %>
+            </div>
+            
+            <div class="form-group form-inline">
+              <%= f.label :金額 %>
+              <%= f.text_field :expense, class: "form-control" %>
+            </div>
+            
+            <div class="form-group">
+              <%= f.label :申請状況 %>
+              <%= f.radio_button :approval, :true %>
+              <%= f.label :approval, "承認済", value: true, class: 'text-dark' %>
+              <%= f.radio_button :approval, :false %>
+              <%= f.label :approval, "未承認", value: false, class: 'text-dark' %>
+            </div>
+              
+          </div>
+          <%= f.submit "検索", name: nil, class: 'btn btn-info' %>
+        <% end %>
+      
     <br>
-    <p>管理者画面</p>
       <table class="table table-striped table-bordered">
         <thead>
           <tr class="table-info">
@@ -11,7 +54,7 @@
             <th>経費カテゴリ</th>
             <th>経費詳細</th>
             <th>金額</th>
-            <th>ステータス</th>
+            <th>申請状況</th>
             <th>添付ファイル</th>
             <th></th>
           </tr>
@@ -46,5 +89,6 @@
           </tbody>
         <% end %>
       </table>
+    
   </div>
 </div>

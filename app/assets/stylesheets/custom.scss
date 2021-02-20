@@ -2,21 +2,12 @@ h1 {
   font-weight: 100;
 }
 
-.text-dark {
-  color: #000;
+h2 {
+  font-size: 20px;
 }
 
-.btn-info {
+.text-dark {
   color: #000;
-  border: 1px solid #000;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-size: 20px;
-  background-color: rgba(0,0,0,0.0); //背景が完全に透明
-  
-  &:hover {
-    color: #fff;
-  }
 }
 
 .top-hero-wrapper {
@@ -56,13 +47,9 @@ h1 {
 
 .navbar-transparent {
   margin-bottom: 0px;
-  background-color: rgba(0,0,0,0.2);
+  background-color: #C0C0C0;
   a {
     color: #fff !important;
-  }
-  
-  img {
-    height: 40px;
   }
 }
 
@@ -98,6 +85,10 @@ h1 {
   p2 {
     color: #ff0000;
   }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
 }
 
 .expense-detail-wrapper {
@@ -128,8 +119,8 @@ h1 {
 
 .users-edit-wrapper {
   
-  .users-edit-container {
-    padding-top: 220px;
+  .container {
+    padding-top: 200px;
     
     .form-group {
       margin-bottom: 20px;
@@ -154,7 +145,7 @@ h1 {
 }
 
 .category-show-wrapper {
-   padding-top: 70px;
+  padding-top: 70px;
   background-color: #fff;
 }
 
@@ -162,6 +153,16 @@ h1 {
   
   .category-edit-container {
     padding-top: 200px;
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+  }
+}
+.admin-users-index-wrapper {
+  
+  .admin-users-index-container {
+    padding-top: 70px;
     
     .form-group {
       margin-bottom: 20px;

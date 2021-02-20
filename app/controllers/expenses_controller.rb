@@ -32,7 +32,7 @@ class ExpensesController < ApplicationController
   def update
     if @expense.update(expense_params)
       
-      @user = User.find_by(admin: true) 
+      @user = User.find_by(admin: true)
       UserMailer.with(user: @user).application_email.deliver
       
       redirect_to expense_url, success: '経費データ更新に成功しました'

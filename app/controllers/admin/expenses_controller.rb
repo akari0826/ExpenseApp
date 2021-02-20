@@ -3,7 +3,7 @@ class Admin::ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update, :approval]
   
   def index
-    @expenses = Expense.includes(:user)
+    @expenses = Expense.includes(:user).search(params[:search])
   end
   
   def show

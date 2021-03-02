@@ -71,3 +71,4 @@ gem 'bcrypt'
 gem 'aws-sdk-s3', require: false
 
 gem 'rename'
+gem 'kaminari'

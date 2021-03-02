@@ -2,7 +2,7 @@ class Admin::UsersController < ApplicationController
   before_action :if_not_admin
   
   def index
-    @users = User.includes(:expenses).search(params[:search])
+    @users = User.includes(:expenses).search(user_search_params)
   end
   
   def edit
@@ -27,5 +27,9 @@ class Admin::UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :email, :admin)
+  end
+  
+  def user_search_params
+    params.fetch(:search, {}).permit(:name, :email)
   end
 end

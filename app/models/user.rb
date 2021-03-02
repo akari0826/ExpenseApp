@@ -12,11 +12,13 @@ class User < ApplicationRecord
   has_many :expenses
   has_many_attached :attached_files
   
-  def self.search(search)
-    if search
-      User.where(['name LIKE ?', "%#{search}%"])
-    else
-      User.all
-    end
+  
+  scope :search, -> (user_search_params) do
+    return if user_search_params.blank? #if文がtrueのとき(=paramsが空だったら)return以下は実行されない
+    
+    name_like(user_search_params[:name]).email_like(user_search_params[:email]) #下で定義したscopeメソッドでAND検索
   end
+  
+  scope :name_like, -> (name) { where('name LIKE ?', "%#{name}%") if name.present? } #nameに値がある場合like検索
+  scope :email_like, -> (email) { where('email LIKE ?', "%#{email}%") if email.present? } #emailに値がある場合like検索
 end

@@ -4,6 +4,7 @@ h1 {
 
 h2 {
   font-size: 20px;
+  margin-bottom: 30px;
 }
 
 .text-dark {
@@ -30,7 +31,7 @@ h2 {
 .users-new-wrapper {
   
   .users-new-container {
-    padding-top: 220px;
+    padding-top: 190px;
     
     .form-group {
       margin-bottom: 20px;
@@ -58,6 +59,7 @@ h2 {
   border: 1px solid #565656;
   padding-top: 15px;
   padding-bottom: 15px;
+  margin-bottom: 25px;
   font-size: 20px;
   background-color: rgba(0,0,0,0.0);
   
@@ -67,7 +69,7 @@ h2 {
 }
 
 .expense-new-wrapper {
-  padding-top: 200px;
+  padding-top: 190px;
 }
 
 .expense-index-wrapper {
@@ -88,6 +90,7 @@ h2 {
   
   .form-group {
     margin-bottom: 20px;
+    
   }
 }
 
@@ -109,7 +112,7 @@ h2 {
 }
 
 .expense-edit-wrapper {
-  padding-top: 200px;
+  padding-top: 190px;
 }
 
 .user-index-wrapper {
@@ -136,7 +139,7 @@ h2 {
 .category-new-wrapper {
   
   .category-new-container {
-    padding-top: 200px;
+    padding-top: 190px;
     
     .form-group {
       margin-bottom: 20px;
@@ -152,7 +155,7 @@ h2 {
 .category-edit-wrapper {
   
   .category-edit-container {
-    padding-top: 200px;
+    padding-top: 190px;
     
     .form-group {
       margin-bottom: 20px;
@@ -168,4 +171,18 @@ h2 {
       margin-bottom: 20px;
     }
   }
+}
+
+.btn-primary {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.btn-secondary {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 15px;
 }

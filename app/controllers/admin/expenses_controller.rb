@@ -3,7 +3,8 @@ class Admin::ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update, :approval]
   
   def index
-    @expenses = Expense.includes(:user).search(params[:search])
+    #N+1問題/検索/ページネーション
+    @expenses = Expense.includes(:user).search(expense_search_params).page(params[:page]).per(10)
   end
   
   def show
@@ -27,13 +28,13 @@ class Admin::ExpensesController < ApplicationController
   end
   
   def approval
-    if @expense.approval == true
+    if @expense.approval == true #承認済データが取消された場合
       @expense.approval = false
       
       @user = Expense.find(params[:id]).user #経費を登録したユーザを出す
       UserMailer.with(user: @user).approval_cancellation_email.deliver
       
-    else
+    else #未承認データが承認された場合
       @expense.approval = true
       
       @user = Expense.find(params[:id]).user
@@ -42,7 +43,7 @@ class Admin::ExpensesController < ApplicationController
     end
     
     @expense.save
-    redirect_to admin_expenses_path(@expense), info: 'ステータスを更新しました' 
+    redirect_to admin_expenses_path(@expense), info: '申請状況を更新しました' 
   end
   
   private
@@ -52,5 +53,10 @@ class Admin::ExpensesController < ApplicationController
   
   def set_expense
     @expense = Expense.find(params[:id])
+  end
+  
+  def expense_search_params
+    params.fetch(:search, {})
+    .permit(:application_date_from, :application_date_to, :name, :expense_category_id, :expense_from, :expense_to, :approval)
   end
 end

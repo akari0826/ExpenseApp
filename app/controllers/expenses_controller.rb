@@ -2,7 +2,7 @@ class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update]
   
   def index
-    @expenses = current_user.expenses.all.page(params[:page]).per(7)
+    @expenses = current_user.expenses.includes(:user).page(params[:page]).per(7)
   end
   
   def new

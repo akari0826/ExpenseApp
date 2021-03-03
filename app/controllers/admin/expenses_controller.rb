@@ -39,7 +39,6 @@ class Admin::ExpensesController < ApplicationController
       
       @user = Expense.find(params[:id]).user
       UserMailer.with(user: @user).approval_email.deliver
-      
     end
     
     @expense.save
@@ -57,6 +56,6 @@ class Admin::ExpensesController < ApplicationController
   
   def expense_search_params
     params.fetch(:search, {})
-    .permit(:application_date_from, :application_date_to, :name, :expense_category_id, :expense_from, :expense_to, :approval)
+    .permit(:application_date_from, :application_date_to, :name, :expense_category_id, :expense_from, :expense_to, :approval, :application_date)
   end
 end

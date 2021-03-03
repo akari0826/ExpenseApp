@@ -17,7 +17,7 @@ h2 {
 }
 
 .top-hero-container {
-  padding-top: 220px;
+  padding-top: 250px;
   h1 {
     font-size: 56px;
     margin-bottom: 20px;
@@ -69,11 +69,11 @@ h2 {
 }
 
 .expense-new-wrapper {
-  padding-top: 190px;
+  padding-top: 150px;
 }
 
 .expense-index-wrapper {
-  padding-top: 70px;
+  padding-top: 150px;
   background-color: #fff;
   
   img {
@@ -90,7 +90,6 @@ h2 {
   
   .form-group {
     margin-bottom: 20px;
-    
   }
 }
 
@@ -115,6 +114,27 @@ h2 {
   padding-top: 190px;
 }
 
+.admin-expense-index-wrapper {
+  padding-top: 100px;
+  background-color: #fff;
+  
+  img {
+    height: 20px;
+  }
+  
+  p1 {
+    color: #008000;
+  }
+  
+  p2 {
+    color: #ff0000;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+}
+
 .user-index-wrapper {
   padding-top: 70px;
   background-color: #fff;
@@ -132,14 +152,14 @@ h2 {
 }
 
 .category-index-wrapper {
-  padding-top: 70px;
+  padding-top: 150px;
   background-color: #fff;
 }
 
 .category-new-wrapper {
   
   .category-new-container {
-    padding-top: 190px;
+    padding-top: 230px;
     
     .form-group {
       margin-bottom: 20px;
@@ -148,14 +168,14 @@ h2 {
 }
 
 .category-show-wrapper {
-  padding-top: 70px;
+  padding-top: 150px;
   background-color: #fff;
 }
 
 .category-edit-wrapper {
   
   .category-edit-container {
-    padding-top: 190px;
+    padding-top: 230px;
     
     .form-group {
       margin-bottom: 20px;
@@ -165,7 +185,7 @@ h2 {
 .admin-users-index-wrapper {
   
   .admin-users-index-container {
-    padding-top: 70px;
+    padding-top: 130px;
     
     .form-group {
       margin-bottom: 20px;

@@ -72,3 +72,4 @@ gem 'aws-sdk-s3', require: false
 
 gem 'rename'
 gem 'kaminari'
+gem 'discard', '~> 1.2'

@@ -36,7 +36,7 @@ class ExpenseCategoriesController < ApplicationController
   end
   
   def destroy
-    ExpenseCategory.find(params[:id]).destroy
+    ExpenseCategory.find(params[:id]).discard
     redirect_to expense_categories_url, success: '経費カテゴリを削除しました'
   end
   

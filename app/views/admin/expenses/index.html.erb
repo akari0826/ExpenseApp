@@ -36,15 +36,15 @@
             
             <div class="form-group">
               <%= f.label :申請状況 %><br>
-              <%= f.radio_button :approval, :true %>
-              <%= f.label :approval, "承認済", value: true %>
-              <%= f.radio_button :approval, :false %>
-              <%= f.label :approval, "未承認", value: false %>
+              <%= f.radio_button :approval, :true, class: "radio-plain" %>
+              <%= f.label :approval, "承認済", value: true, class: "states-label" %>
+              <%= f.radio_button :approval, :false, class: "radio-plain" %>
+              <%= f.label :approval, "未承認", value: false, class: "states-label" %>
             </div>
             
             <div class="form-group">
               <%= f.label :表示順序 %><br>
-              <%= f.select :application_date, {"申請日の新しい順": 0,"申請日の古い順": 1}, selected: 0, class: "form-control" %>
+              <%= f.select :application_date, {"申請日の新しい順": 0,"申請日の古い順": 1}, { selected: 0 }, { class: "form-control" } %>
             </div>
               
           </div>

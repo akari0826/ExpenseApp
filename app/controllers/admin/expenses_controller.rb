@@ -23,7 +23,7 @@ class Admin::ExpensesController < ApplicationController
   end
   
   def destroy
-    Expense.find(params[:id]).destroy
+    Expense.find(params[:id]).discard
     redirect_to admin_expenses_url, success: '経費データを削除しました'
   end
   

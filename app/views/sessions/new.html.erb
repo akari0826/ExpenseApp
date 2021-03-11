@@ -2,8 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-offset-4 col-md-4 users-new-container">
-        <h1 class="text-center text-dark">ログイン</h1>
+        <h1 class="text-center text-dark">ログイン</h1><br>
         <%= form_with scope: :session, url: login_path, local: true do |f| %>
+        
           <div class="form-group">
             <%= f.label :メールアドレス, class: "text-dark" %>
             <%= f.text_field :email, class: "form-control" %>
@@ -15,7 +16,7 @@
           
           <%= f.submit "ログイン", class: "btn btn-block btn-info" %>
         <% end %>
-        <%= link_to '新規登録はこちら', new_user_path, class: 'text-dark' %>
+        <%= link_to '新規登録はこちら', new_user_path %>
       </div>
     </div>
   </div>

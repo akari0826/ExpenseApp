@@ -73,3 +73,6 @@ gem 'aws-sdk-s3', require: false
 gem 'rename'
 gem 'kaminari'
 gem 'discard', '~> 1.2'
+gem 'activestorage-validator'
+gem 'data-confirm-modal'
+gem 'rails-i18n', '~> 5.1'

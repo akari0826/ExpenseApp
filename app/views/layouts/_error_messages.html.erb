@@ -1,0 +1,32 @@
+<!--@userに値がある＆エラーが１つ以上ある場合-->
+<% if @user && @user.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<!--@expenseに値がある＆エラーが１つ以上ある場合-->
+<% if @expense && @expense.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% @expense.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<!--@expense_categoryに値がある＆エラーが１つ以上ある場合-->
+<% if @expense_category && @expense_category.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% @expense_category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

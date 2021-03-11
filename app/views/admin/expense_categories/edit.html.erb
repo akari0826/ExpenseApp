@@ -2,9 +2,14 @@
   <div class="container">
     <div class="row">
       <div class="col-md-offset-4 col-md-4 category-edit-container">
-        <h1 class="text-center text-dark">経費カテゴリ編集</h1>
-        <br>
-        <%= form_with model: @expense_category, local: true do |f| %>
+        
+        <!--URLを指定-->
+        <%= form_with model: @expense_category, url: admin_expense_category_path, local: true do |f| %>
+        
+          <!--バリデーションエラーメッセージの表示-->
+          <%= render 'layouts/error_messages', model: f.object %>
+          <h1 class="text-center text-dark">経費カテゴリ編集</h1><br>
+        
           <div class="form-group">
             <%= f.label :経費名称, class: 'text-dark' %>
             <%= f.text_field :name, class: 'form-control' %>

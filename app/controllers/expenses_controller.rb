@@ -2,7 +2,8 @@ class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update]
   
   def index
-    @expenses = current_user.expenses.includes(:user).page(params[:page]).per(7)
+    #N+1問題/検索/ページネーション
+    @expenses = current_user.expenses.includes(:user).search(expense_search_params).page(params[:page]).per(7)
   end
   
   def new
@@ -54,5 +55,9 @@ class ExpensesController < ApplicationController
   
   def set_expense
     @expense = Expense.find(params[:id])
+  end
+  
+  def expense_search_params
+    params.fetch(:search, {}).permit(:approval, :application_date)
   end
 end

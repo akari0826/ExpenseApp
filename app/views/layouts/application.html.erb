@@ -16,54 +16,10 @@
       </div>
     <% end %>
     
-    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
-      <div class="container">
-        <ul class="nav navbar-nav navbar-right">
-           
-          <% if logged_in? && current_user.admin? %>
-            <li>
-              <%= link_to 'ユーザ一覧', admin_users_path %>
-            </li>
-            <li>
-              <%= link_to '経費一覧', admin_expenses_path %>
-            </li>
-            <li>
-              <%= link_to '経費カテゴリ管理', expense_categories_path %>
-            </li>
-            <li>
-              <%= link_to 'ログアウト', logout_path, method: :delete %>
-            </li>
-            
-          <% elsif logged_in? %>
-            <li>
-              <%= link_to '経費一覧', expenses_path %>
-            </li>
-            <li>
-              <%= link_to '経費登録', new_expense_path %>
-            </li>
-            <li>
-              <%= link_to 'ログアウト', logout_path, method: :delete %>
-            </li>
-            
-          <% else %>
-            <li>
-              <%= link_to '新規登録', new_user_path %>
-            </li>
-            <li>
-              <%= link_to 'ログイン', login_path %>
-            </li>
-          <% end %>
-         
-        </ul>
-        <ul class="nav navbar-nav mr-auto">
-          <% if logged_in? %>
-            <span class="navbar-brand md-0">経費精算システム</span>
-          <% end %>
-        </ul>
-      </div> 
-    </nav>
-    
-    <%= yield %>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+    </div>
     
     <script>
       $(function(){

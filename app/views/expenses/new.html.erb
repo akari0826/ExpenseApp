@@ -2,8 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-offset-4 col-md-4">
-        <h1 class="text-center">経費データ登録</h1><br>
         <%= form_with model: @expense, local: true do |f| %>
+        
+          <!--バリデーションエラーメッセージの表示-->
+          <%= render 'layouts/error_messages', model: f.object %>
+          <h1 class="text-center">経費登録</h1><br>
+        
           <div class="form-group">
             <%= f.label :申請日 %>
             <%= f.date_field :application_date, class: 'form-control' %>

@@ -2,15 +2,21 @@ class Expense < ApplicationRecord
   include Discard::Model
   default_scope -> { kept }
   
-  validates :user_id, presence: true
+  # validates :user_id, presence: true
   validates :application_date, presence: true
   validates :expense_category_id, presence: true
   validates :expense_detail, presence: true
-  validates :expense, presence: true, format: { with: /\A[0-9]+\z/, message: "半角英数字のみ入力可" }
-  validates :attached_file, presence: true
+  validates :expense,
+            presence: true,
+            numericality: {
+              only_integer: true, #整数のみ許可；全角数字は弾かれる
+              allow_blank: true, #nilや空文字にバリデーションがパス
+              message: "を半角数字で入力してください"
+            }
+  validates :attached_file, presence: true #gemでバリデーションできるように
   
   belongs_to :user
-  belongs_to :expense_category
+  belongs_to :expense_category, optional: true #参照先のテーブルのデータがない場合にエラーにならないように
   has_one_attached :attached_file
     
   
@@ -43,10 +49,15 @@ class Expense < ApplicationRecord
   scope :approval_is, -> (approval) { where(approval: approval) if approval.present? }
   #application_date_orderがある場合、application_dateで検索
   scope :application_date_order, -> (date_order) {
-    if date_order == "0" #申請日の新しい順の場合
+    #申請日の新しい順の場合
+    if date_order == "0"
       order(application_date: :desc)
-    else #申請日の古い順の場合(date_order == "1")
+    #申請日の古い順の場合  
+    elsif date_order == "1"
       order(application_date: :asc)
+    #未選択の場合、id順に並べる
+    else
+      order(:id)
     end
   }
 end

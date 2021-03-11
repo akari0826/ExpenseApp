@@ -1,0 +1,6 @@
+<%= @user.name %>様
+==========================
+
+以下のURLをクリックしてメール認証を完了させてください。
+
+<%= link_to 'メール認証完了する', authenticate_completed_url(@user.token) %>

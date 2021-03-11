@@ -1,0 +1,49 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認用）"
+        
+      expense:
+        application_date: "申請日"
+        expense_category_id: "経費カテゴリ"
+        expense_detail: "経費詳細"
+        expense: "経費"
+        attached_file: "添付ファイル"
+        
+      expense_category:
+        name: "経費カテゴリ"
+    
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "を入力してください"
+            email:
+              blank: "を入力してください"
+            password:
+              blank: "を入力してください"
+            password_confirmation:
+              blank: "を入力してください"
+              
+        expense:
+          attributes:
+            application_date:
+              blank: "を入力してください"
+            expense_category_id:
+              blank: "を入力してください"
+            expense_detail:
+              blank: "を入力してください"
+            expense:
+              blank: "を入力してください"
+            attached_file:
+              blank: "をアップロードしてください"
+              
+        expense_category:
+          attributes:
+            name:
+              blank: "を入力してください"

@@ -2,29 +2,34 @@
   <div class="container">
     <div class="row">
       <div class="col-md-offset-4 col-md-4">
-        <h1 class="text-center text-dark">ユーザ編集</h1>
         <%= form_with model: @user, url: admin_user_path, local: true do |f| %>
         
+          <!--バリデーションエラーメッセージの表示-->
+          <%= render 'layouts/error_messages', model: f.object %>
+          <h1 class="text-center text-dark">ユーザ編集</h1><br>
+        
           <div class="form-group">
-            <%= f.label :名前, class: 'text-dark' %>
+            <%= f.label :名前 %>
             <%= f.text_field :name, class: 'form-control' %>
           </div>
           
           <div class="form-group">
-            <%= f.label :メールアドレス, class: 'text-dark' %>
+            <%= f.label :メールアドレス %>
             <%= f.text_field :email, class: 'form-control' %>
           </div>
           
           <div class="form-group">
-          <% if @user.id == current_user.id %> <%# 表示しているuserのidがログインしているuser(管理者)と同じ場合 %>
-            <%= f.radio_button :admin, :true, disabled: true %> <%# 管理者ラジオボタンを無効化 %>
+          <!--表示しているuserのidがログインしているuser(管理者)と同じ場合-->
+          <% if @user.id == current_user.id %>
+            <%= f.radio_button :admin, :true, disabled: true %> <!--管理者ラジオボタンを無効化-->
             <%= f.label :admin, "管理者", value: true, class: 'text-dark' %>
-            <%= f.radio_button :admin, :false, disabled: true %> <%# ユーザラジオボタンを無効化 %>
+            <%= f.radio_button :admin, :false, disabled: true %> <!--ユーザラジオボタンを無効化-->
           <% else %>
             <%= f.radio_button :admin, :true %>
             <%= f.label :admin, "管理者", value: true, class: 'text-dark' %>
             <%= f.radio_button :admin, :false %>
           <% end %>
+          
             <%= f.label :admin, "ユーザ", value: false, class: 'text-dark' %>
           </div>
           

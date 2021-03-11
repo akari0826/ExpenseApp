@@ -10,19 +10,24 @@ h2 {
 span.navbar-brand.md-0 {
   font-size: 22px;
   color: #000;
+  
+  .header-text {
+    text-decoration: none;
+  }
 }
 
 .text-dark {
   color: #000;
 }
 
-.top-hero-wrapper {
-  width: 100vw;
-  height: 100vh;
-}
+// .top-hero-wrapper {
+//   width: 100vw;
+//   height: 100vh;
+// }
 
 .top-hero-container {
   padding-top: 250px;
+  
   h1 {
     font-size: 56px;
     margin-bottom: 20px;
@@ -35,8 +40,21 @@ span.navbar-brand.md-0 {
 
 .users-new-wrapper {
   
+  ul {
+    list-style: none;
+    margin-right: 5px;
+    color: #ff7d6e;
+    background: #ffebe9;
+    border: solid 2px #F00;
+    padding: 20px;
+  }
+  
+  li {
+    color: #F00;
+  }
+  
   .users-new-container {
-    padding-top: 190px;
+    padding-top: 170px;
     
     .form-group {
       margin-bottom: 20px;
@@ -74,15 +92,34 @@ span.navbar-brand.md-0 {
 }
 
 .expense-new-wrapper {
-  padding-top: 150px;
+  padding-top: 130px;
+  
+  ul {
+    list-style: none;
+    margin-right: 5px;
+    color: #ff7d6e;
+    background: #ffebe9;
+    border: solid 2px #F00;
+    padding: 20px;
+  }
+  
+  li {
+    color: #F00;
+  }
 }
 
 .expense-index-wrapper {
-  padding-top: 150px;
+  padding-top: 100px;
   background-color: #fff;
   
+  .nav {
+    // width: 200px;
+    // margin: 0 auto;
+    // text-align :center;
+  }
+  
   img {
-    height: 20px;
+    height: 25px;
   }
   
   p1 {
@@ -91,6 +128,11 @@ span.navbar-brand.md-0 {
   
   p2 {
     color: #ff0000;
+  }
+  
+  p3 {
+    font-size: 20px;
+    
   }
   
   .form-group {
@@ -99,11 +141,11 @@ span.navbar-brand.md-0 {
 }
 
 .expense-detail-wrapper {
-  padding-top: 70px;
+  padding-top: 130px;
   background-color: #fff;
   
   img {
-    height: 20px;
+    height: 25px;
   }
   
   p1 {
@@ -113,18 +155,40 @@ span.navbar-brand.md-0 {
   p2 {
     color: #ff0000;
   }
+  
+  .table {
+    margin: 20px auto;
+  }
+}
+
+td, th {
+  text-align: center;
 }
 
 .expense-edit-wrapper {
-  padding-top: 190px;
+  padding-top: 130px;
+  
+  ul {
+    list-style: none;
+    margin-right: 5px;
+    color: #ff7d6e;
+    background: #ffebe9;
+    border: solid 2px #F00;
+    padding: 20px;
+  }
+  
+  li {
+    color: #F00;
+  }
 }
 
 .admin-expense-index-wrapper {
-  padding-top: 100px;
+  padding-top: 70px;
   background-color: #fff;
+  text-align: center;
   
   img {
-    height: 20px;
+    height: 25px;
   }
   
   p1 {
@@ -137,6 +201,7 @@ span.navbar-brand.md-0 {
   
   .form-group {
     margin-bottom: 10px;
+    text-align: left;
   }
 }
 
@@ -146,6 +211,19 @@ span.navbar-brand.md-0 {
 }
 
 .users-edit-wrapper {
+  
+  ul {
+    list-style: none;
+    margin-right: 5px;
+    color: #ff7d6e;
+    background: #ffebe9;
+    border: solid 2px #F00;
+    padding: 20px;
+  }
+  
+  li {
+    color: #F00;
+  }
   
   .container {
     padding-top: 200px;
@@ -157,11 +235,24 @@ span.navbar-brand.md-0 {
 }
 
 .category-index-wrapper {
-  padding-top: 150px;
+  padding-top: 180px;
   background-color: #fff;
 }
 
 .category-new-wrapper {
+  
+  ul {
+    list-style: none;
+    margin-right: 5px;
+    color: #ff7d6e;
+    background: #ffebe9;
+    border: solid 2px #F00;
+    padding: 20px;
+  }
+  
+  li {
+    color: #F00;
+  }
   
   .category-new-container {
     padding-top: 230px;
@@ -173,11 +264,24 @@ span.navbar-brand.md-0 {
 }
 
 .category-show-wrapper {
-  padding-top: 150px;
+  padding-top: 180px;
   background-color: #fff;
 }
 
 .category-edit-wrapper {
+  
+  ul {
+    list-style: none;
+    margin-right: 5px;
+    color: #ff7d6e;
+    background: #ffebe9;
+    border: solid 2px #F00;
+    padding: 20px;
+  }
+  
+  li {
+    color: #F00;
+  }
   
   .category-edit-container {
     padding-top: 230px;
@@ -190,10 +294,15 @@ span.navbar-brand.md-0 {
 .admin-users-index-wrapper {
   
   .admin-users-index-container {
-    padding-top: 130px;
+    padding-top: 150px;
+    
+    .row {
+      text-align: center;
+    }
     
     .form-group {
       margin-bottom: 20px;
+      text-align: left;
     }
   }
 }
@@ -206,8 +315,7 @@ span.navbar-brand.md-0 {
 }
 
 .btn-secondary {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 15px 60px;
   margin-bottom: 20px;
   font-size: 15px;
 }
@@ -220,6 +328,20 @@ span.navbar-brand.md-0 {
   margin-top: 20px;
 }
 
-.states-label {
+.states-label1 {
+  margin-top: 17px;
+  color: #008000;
+  font-weight: normal;
+}
+
+.states-label2 {
+  margin-top: 17px;
+  color: #ff0000;
+  font-weight: normal;
+}
+
+.btn-secondary2 {
+  padding: 15px 60px;
+  font-size: 15px;
   margin-top: 17px;
 }

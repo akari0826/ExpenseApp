@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   delete  '/logout',  to: 'sessions#destroy'
   
   resources :users, only: [:new, :create]
-  resources :expenses, :expense_categories
+  resources :expenses
   namespace :admin do
-    resources :users
+    resources :users, :expense_categories
     resources :expenses do
       member do
         get 'approval'

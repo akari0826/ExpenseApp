@@ -2,15 +2,24 @@ class User < ApplicationRecord
   include Discard::Model
   default_scope -> { kept }
   
-  validates :name, presence: true, length: { maximum: 15 }
+  validates :name, presence: true,
+                   length: { maximum: 15 }
   
-  VALID_EMAIL_REGEX = /[a-z]+@[a-z]+\.[a-z]+/
-  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
+  VALID_EMAIL_REGEX = /[a-z]+@[a-z]+\.[a-z]+/ #[~ @ ~ . ~]の形を許可
+  validates :email, presence: true,
+                    format: { with: VALID_EMAIL_REGEX, allow_blank: true } #nilや空文字にバリデーションがパス
   
-  VALID_PASSWORD_REGEX = /(?=.*[a-z])(?=.*[0-9])\A[a-z0-9]+\z/i
-  validates :password, presence: true, length: { in: 8..32 }, format: { with: VALID_PASSWORD_REGEX }, on: :create
+  VALID_PASSWORD_REGEX = /(?=.*[a-z])(?=.*[0-9])\A[a-z0-9]+\z/i #半角英数字のみ許可
+  validates :password, presence: true,
+                       length: { in: 8..32 },
+                       allow_blank: true, #nilや空文字にバリデーションがパス
+                       format: {
+                         with: VALID_PASSWORD_REGEX,
+                         message: "を半角英数字で入力してください"
+                       }, on: :create #新規登録の時のみバリデーション
   
   has_secure_password
+  has_secure_token
   
   has_many :expenses
   has_many_attached :attached_files

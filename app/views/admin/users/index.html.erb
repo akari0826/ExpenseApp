@@ -1,16 +1,19 @@
 <div class="admin-users-index-wrapper">
-  <div class="col-md-offset-4 col-md-4 admin-users-index-container">
+  <div class="admin-users-index-container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4">
+      <h1 class="text-center text-dark">ユーザ一覧</h1><br>
     
-    <button class="btn btn-primary"
-      data-toggle="collapse"
-      data-target="#collapseExample"
-      aria-expanded="false"
-      aria-controls="collapseExample">ユーザ検索</button><br>
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body">
+        <button class="btn btn-primary"
+          data-toggle="collapse"
+          data-target="#collapseExample"
+          aria-expanded="false"
+          aria-controls="collapseExample">ユーザ検索 ▼</button><br>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
         
         <%= form_with scope: :search, url: admin_users_path, method: :get, local: true do |f| %>
-          <div class="row">
+          
             <div class="form-group">
               <%= f.label :名前 %>
               <%= f.text_field :name, class: "form-control" %>
@@ -20,12 +23,15 @@
               <%= f.text_field :email, class: "form-control" %>
             </div>
             <%= f.submit "検索", class: 'btn btn-secondary' %>
-          </div>
+          
         <% end %>
           
+          </div>
+        </div>
       </div>
     </div>
       
+    <div class="col-md-offset-2 col-md-8">
       <table class="table table-striped table-bordered">
         <thead>
           <tr class="table-info">
@@ -43,14 +49,19 @@
                 <td><%= user.email %></td>
                 <td>
                     <%= link_to "編集", edit_admin_user_path(user) %>
+                    
+                  <!--current_userが管理者&(削除対象の)userがcurrent_userではない⇨管理者が自分自身を削除できないように-->
                   <% if current_user.admin? && !current_user?(user) %>
-                    <%= link_to "削除", admin_user_path(user), method: :delete, data: {confirm: "削除してよろしいですか？"} %>
+                    <%= link_to "削除", admin_user_path(user), method: :delete, data: 
+                      { confirm: "削除してよろしいですか？",
+                        commit: "削除",
+                        cancel: "キャンセル" }, title: "削除の確認" %>
                   <% end %>
                 </td>
             </tr>
           </tbody>
         <% end %>
       </table>
-    
+    </div>
   </div>
 </div>

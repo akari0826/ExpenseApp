@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_04_081649) do
+ActiveRecord::Schema.define(version: 2021_03_08_075804) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -63,7 +63,9 @@ ActiveRecord::Schema.define(version: 2021_03_04_081649) do
     t.string "password_digest"
     t.boolean "admin", default: false
     t.datetime "discarded_at"
+    t.string "token"
     t.index ["discarded_at"], name: "index_users_on_discarded_at"
+    t.index ["token"], name: "index_users_on_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

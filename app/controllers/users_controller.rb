@@ -5,34 +5,35 @@ class UsersController < ApplicationController
   end
   
   def create
-  #binding.pry
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_url, success: '登録が完了しました'
+      
+      #新規登録したユーザにメール認証を送る
+      UserMailer.with(user: @user).authentication_email.deliver
+      
+      redirect_to root_url, success: '登録が完了しました。登録したメールアドレスにメール認証を送信しました'
     else
       flash.now[:danger] = '登録が失敗しました'
       render :new
     end
   end
   
-  def authenticate
-    @user = current_user?
-    UserMailer.with(user: @user).authentication_email.deliver
-  end
-  
+  #メール認証を完了する
   def authenticate_completed
+    # binding.pry
     @user = User.find_by(params[:token])
     if @user
       @user.regenerate_token
-      @user.is_confirmed_at = Time.current
-      @user.save!
+      @user.created_at = Time.current
+      @user.save
+      redirect_to login_path, success: 'メール認証に成功しました'
     else
-      redirect_to root_url
+      redirect_to root_url, danger: 'メール認証に失敗しました'
     end
   end
   
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :token)
   end
 end

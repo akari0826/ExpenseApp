@@ -3,13 +3,19 @@ Rails.application.routes.draw do
   
   root 'pages#index'
   get 'pages/help'
-  
+
   get     '/login',   to: 'sessions#new'
   post    '/login',   to: 'sessions#create'
   delete  '/logout',  to: 'sessions#destroy'
   
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create] do
+    member do
+        get 'authenticate_completed'
+    end
+  end
+  
   resources :expenses
+  
   namespace :admin do
     resources :users, :expense_categories
     resources :expenses do

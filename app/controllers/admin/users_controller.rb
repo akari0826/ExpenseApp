@@ -2,7 +2,7 @@ class Admin::UsersController < ApplicationController
   before_action :if_not_admin
   
   def index
-    @users = User.includes(:expenses).search(user_search_params)
+    @users = User.includes(:expenses).search(user_search_params).page(params[:page]).per(5)
   end
   
   def edit

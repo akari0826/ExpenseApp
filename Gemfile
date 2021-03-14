@@ -45,6 +45,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
   gem 'sqlite3', '1.3.13'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -82,3 +83,4 @@ gem 'discard', '~> 1.2'
 gem 'activestorage-validator'
 gem 'data-confirm-modal'
 gem 'rails-i18n', '~> 5.1'
+gem 'fog-aws'

@@ -2,7 +2,6 @@ class Expense < ApplicationRecord
   include Discard::Model
   default_scope -> { kept }
   
-  # validates :user_id, presence: true
   validates :application_date, presence: true
   validates :expense_category_id, presence: true
   validates :expense_detail, presence: true

@@ -1,5 +1,6 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update]
+  before_action :authenticate_user
   
   def index
     #N+1問題/検索/ページネーション

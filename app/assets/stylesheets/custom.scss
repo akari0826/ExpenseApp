@@ -112,10 +112,8 @@ span.navbar-brand.md-0 {
   padding-top: 100px;
   background-color: #fff;
   
-  .nav {
-    // width: 200px;
-    // margin: 0 auto;
-    // text-align :center;
+  nav {
+    text-align :center;
   }
   
   img {
@@ -292,6 +290,10 @@ td, th {
   }
 }
 .admin-users-index-wrapper {
+  
+  nav {
+    text-align :center;
+  }
   
   .admin-users-index-container {
     padding-top: 150px;

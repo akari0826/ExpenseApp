@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_action :if_not_admin
+  before_action :authenticate_user, :if_not_admin
   
   def index
     @users = User.includes(:expenses).search(user_search_params).page(params[:page]).per(5)

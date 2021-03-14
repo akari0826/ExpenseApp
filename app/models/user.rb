@@ -9,6 +9,8 @@ class User < ApplicationRecord
   validates :email, presence: true,
                     format: { with: VALID_EMAIL_REGEX, allow_blank: true } #nilや空文字にバリデーションがパス
   
+  has_secure_password
+  
   VALID_PASSWORD_REGEX = /(?=.*[a-z])(?=.*[0-9])\A[a-z0-9]+\z/i #半角英数字のみ許可
   validates :password, presence: true,
                        length: { in: 8..32 },
@@ -17,9 +19,6 @@ class User < ApplicationRecord
                          with: VALID_PASSWORD_REGEX,
                          message: "を半角英数字で入力してください"
                        }, on: :create #新規登録の時のみバリデーション
-  
-  has_secure_password
-  has_secure_token
   
   has_many :expenses
   has_many_attached :attached_files
@@ -35,4 +34,34 @@ class User < ApplicationRecord
   scope :name_like, -> (name) { where('name LIKE ?', "%#{name}%") if name.present? }
   #emailに値がある場合like検索
   scope :email_like, -> (email) { where('email LIKE ?', "%#{email}%") if email.present? }
-end
+  
+  
+#   attr_accessor :remember_token, :activation_token
+#   # create(新規登録)の直前に実行
+#   before_create :create_activation_digest
+  
+#   # 渡された文字列のハッシュ値を返す
+#   def User.digest(string)
+#     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+#     BCrypt::Password.create(string, cost: cost)
+#   end
+  
+#   # ランダムなトークンを返す
+#   def User.new_token
+#     SecureRandom.urlsafe_base64
+#   end
+  
+#   # トークンがダイジェストと一致したらtrueを返す
+#   def authenticated?(attribute, token)
+#     digest = send("#{attribute}_digest")
+#     return false if digest.nil?
+#     BCrypt::Password.new(digest).is_password?(token)
+#   end
+  
+#   private
+#   # 有効化トークンとダイジェストを作成および代入する
+#   def create_activation_digest
+#     self.activation_token = User.new_token
+#     self.activation_digest = User.digest(activation_token) #digest=ハッシュ化？
+#   end
+# end

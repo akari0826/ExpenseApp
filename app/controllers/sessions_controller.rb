@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  
   def new
   end
   
@@ -7,8 +8,10 @@ class SessionsController < ApplicationController
     if user && user.authenticate(password_params[:password])
       log_in(user)
       
+      # 管理者の場合
       if user.admin == true
         redirect_to admin_expenses_url, success: 'ログインに成功しました'
+      # 一般ユーザの場合
       else
         redirect_to expenses_url, success: 'ログインに成功しました'
       end

@@ -8,11 +8,10 @@ Rails.application.routes.draw do
   post    '/login',   to: 'sessions#create'
   delete  '/logout',  to: 'sessions#destroy'
   
-  resources :users, only: [:new, :create] do
-    member do
-        get 'authenticate_completed'
-    end
-  end
+  # URLにトークンを持たせる & URLをasで別名を指定
+  # get 'users/:token/authenticate_completed', to: 'users#authenticate_completed', as: :authenticate_completed
+  
+  resources :users, only: [:new, :create]
   
   resources :expenses
   
@@ -24,4 +23,6 @@ Rails.application.routes.draw do
       end
     end  
   end
+  
+  resources :account_activations, only: [:edit]
 end

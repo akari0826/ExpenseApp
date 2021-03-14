@@ -44,6 +44,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
+  gem 'sqlite3', '1.3.13'
 end
 
 group :development do

@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: ENV['LOGIN_NAME']
+  default from: ENV['LOGIN_EMAIL']
   
   def approval_email #管理者が承認した際に送信される
     @user = params[:user]

@@ -20,6 +20,10 @@ default: &default
 development:
   <<: *default
   database: expense_app_development
+  name: <%= ENV['LOGIN_NAME'] %>
+  emal: <%= ENV['LOGIN_EMAIL'] %>
+  password: <%= ENV['LOGIN_PASSWORD'] %>
+  admin: true
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -52,3 +56,7 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
+  name: <%= ENV['LOGIN_NAME'] %>
+  emal: <%= ENV['LOGIN_EMAIL'] %>
+  password: <%= ENV['LOGIN_PASSWORD'] %>
+  admin: true

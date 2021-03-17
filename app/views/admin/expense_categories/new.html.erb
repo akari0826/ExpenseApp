@@ -7,7 +7,7 @@
         <%= form_with model: @expense_category, url: admin_expense_categories_path, local: true do |f| %>
           
           <!--バリデーションエラーメッセージの表示-->
-          <%= render 'layouts/error_messages', model: f.object %>
+          <%= render 'layouts/error_messages', object: f.object %>
           <h1 class="text-center text-dark">経費カテゴリ登録</h1><br>
           
             <div class="form-group">

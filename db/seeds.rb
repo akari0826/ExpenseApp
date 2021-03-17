@@ -11,9 +11,8 @@ password: ENV['LOGIN_PASSWORD'],
 password_confirmation: ENV['LOGIN_PASSWORD'],
 admin: true)
 
-User.create!(name: "",
-email: ,
-password: ,
-password_confirmation: ,
-admin: false
-    )
+User.create!(name: "テストユーザー",
+email: ENV['TEST_EMAIL'],
+password: ENV['TEST_PASSWORD'],
+password_confirmation: ENV['TEST_PASSWORD'],
+admin: false)

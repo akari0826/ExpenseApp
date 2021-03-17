@@ -10,3 +10,10 @@ email: ENV['LOGIN_EMAIL'],
 password: ENV['LOGIN_PASSWORD'],
 password_confirmation: ENV['LOGIN_PASSWORD'],
 admin: true)
+
+User.create!(name: "",
+email: ,
+password: ,
+password_confirmation: ,
+admin: false
+    )

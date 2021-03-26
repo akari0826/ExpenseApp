@@ -4,7 +4,9 @@ class Expense < ApplicationRecord
   
   validates :application_date, presence: true
   validates :expense_category_id, presence: true
-  validates :expense_detail, presence: true
+  validates :expense_detail,
+            presence: true,
+            length: { maximum: 15, message: "を15字以内で入力してください" }
   validates :expense,
             presence: true,
             numericality: {

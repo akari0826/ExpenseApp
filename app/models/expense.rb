@@ -10,14 +10,14 @@ class Expense < ApplicationRecord
   validates :expense,
             presence: true,
             numericality: {
-              only_integer: true, #整数のみ許可；全角数字は弾かれる
-              allow_blank: true, #nilや空文字にバリデーションがパス
+              only_integer: true, # 整数のみ許可；全角数字は弾かれる
+              allow_blank: true, # nilや空文字にバリデーションがパス
               message: "を半角数字で入力してください"
             }
-  validates :attached_file, presence: true #gemでバリデーションできるように
+  validates :attached_file, presence: true # gemでバリデーションできるように
   
   belongs_to :user
-  belongs_to :expense_category, optional: true #参照先のテーブルのデータがない場合にエラーにならないように
+  belongs_to :expense_category, optional: true # 参照先のテーブルのデータがない場合にエラーにならないように
   has_one_attached :attached_file
     
   

@@ -1,5 +1,5 @@
 class Admin::ExpenseCategoriesController < ApplicationController
-  before_action :authenticate_user, :if_not_admin
+  before_action :if_not_admin
   before_action :set_expense_category, only: [:show, :edit, :update]
   
   def index

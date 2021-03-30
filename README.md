@@ -9,11 +9,11 @@
 
 # 使用技術
 
-## OS
+### OS
 - Mac
 - Linux（RedHat）?
 
-## 言語
+### 言語
 - HTML
 - CSS
 - JavaScript

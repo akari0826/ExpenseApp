@@ -6,8 +6,10 @@
 # URL
   https://pure-lake-08669.herokuapp.com/ <br>
   下記のテストユーザでログインすることができます。<br>
-  メールアドレス：test@test.com　パスワード：testuser1
+  *メールアドレス：test@test.com　パスワード：testuser1*
 
+# 使用技術
+  
 
 Things you may want to cover:
 

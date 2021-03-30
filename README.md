@@ -5,7 +5,7 @@
 # URL
   https://pure-lake-08669.herokuapp.com/ <br>
   下記のテストユーザでログインすることができます。<br>
-  メールアドレス：test@test.com　パスワード：testuser1
+    メールアドレス：test@test.com　パスワード：testuser1
 
 # 使用技術
 
@@ -19,16 +19,15 @@
 - JavaScript
 - Ruby 2.6.6
 
-## フレームワーク
+### フレームワーク
 - Bootstrap
 - JQuery
 - Ruby on Rails 5.2.4
 
-## DB
+### DB
 - MySQL 5.7
 
-
-## その他ミドルウェア、サーバなど
+### その他ミドルウェア、サーバなど
 - Cloud9
 - Git
 

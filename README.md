@@ -6,27 +6,20 @@
 # URL
   https://pure-lake-08669.herokuapp.com/ <br>
   下記のテストユーザでログインすることができます。<br>
-  *メールアドレス：test@test.com　パスワード：testuser1*
+  メールアドレス：test@test.com　パスワード：testuser1
 
 # 使用技術
-  
+- Ruby 2.6.6
+- Ruby on Rails 5.2.4
+- MySQL 5.7
+- 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 機能一覧
+- ユーザ登録、ログイン機能
+- 経費データ登録、編集、削除機能
+- PDFファイルアップロード機能（Active Storage）
+- 管理者機能（管理者権限変更、承認・承認取消）
+- 検索機能、並べ替え機能
+- ページネーション機能（kaminari）
+- 承認メール機能（Action Mailer）
+- 論理削除（discard）

@@ -1,7 +1,7 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 経費精算システム
+  経費の申請・承認ができるWebアプリケーションです。<br>  
+  
+  
 
 Things you may want to cover:
 

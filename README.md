@@ -1,7 +1,8 @@
 # 経費精算システム
   経費の申請・承認ができるWebアプリケーションです。<br>  
   
-  
+  <img width="1440" alt="経費精算:トップベージ" src="https://user-images.githubusercontent.com/76086661/112940587-50040880-9168-11eb-8f77-b79533b0ea9e.png">
+
 
 Things you may want to cover:
 

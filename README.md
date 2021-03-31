@@ -1,6 +1,6 @@
 # 経費精算システム
   経費の申請・承認ができるWebアプリケーションです。<br>  
-  <img width="1440" alt="経費精算:トップベージ" src="https://user-images.githubusercontent.com/76086661/112940587-50040880-9168-11eb-8f77-b79533b0ea9e.png">
+  <img width="1433" alt="経費精算:トップページ" src="https://user-images.githubusercontent.com/76086661/113094182-33c99f80-922c-11eb-91cf-60d50158afe6.png">
   
 # URL
   https://pure-lake-08669.herokuapp.com/ <br>

@@ -2,15 +2,14 @@
   経費の申請・承認ができるWebアプリケーションです。<br>  
   <img width="1429" alt="経費精算トップページ" src="https://user-images.githubusercontent.com/76086661/113094371-80ad7600-922c-11eb-8b0a-c3a02e360d04.png">
 
-# URL
-  https://pure-lake-08669.herokuapp.com/ <br>
+  アプリURL：https://pure-lake-08669.herokuapp.com/ <br>
   ゲストログインボタンからメールアドレスとパスワードを入力せずにログインできます。
 
 # 使用技術
 
 ### OS
 - Mac
-- Linux（RedHat）?
+- Linux（RedHatディストリビューション）
 
 ### 言語
 - HTML

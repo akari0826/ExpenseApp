@@ -9,7 +9,7 @@
 
 ### OS
 - Mac
-- Linux（RedHat）?
+- Linux（RedHatディストリビューション）
 
 ### 言語
 - HTML

@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
       log_in(user)
       
       # 管理者の場合
-      if user.admin == true
-        redirect_to admin_expenses_url, success: 'ログインに成功しました'
+      if user.admin
+        redirect_to admin_expenses_url, success: '管理者としてログインに成功しました'
       # 一般ユーザの場合
       else
         redirect_to expenses_url, success: 'ログインに成功しました'

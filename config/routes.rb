@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'sessions/new'
   post '/guest', to: 'guest_sessions#create'
+  post '/admin/guest', to: 'admin/guest_sessions#create'
   
   root 'pages#index'
   get 'pages/help'

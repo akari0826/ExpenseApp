@@ -20,17 +20,18 @@
           
           <div class="form-group">
           <!--表示しているuserのidがログインしているuser(管理者)と同じ場合-->
-          <% if @user.id == current_user.id %>
-            <%= f.radio_button :admin, :true, disabled: true %> <!--管理者ラジオボタンを無効化-->
-            <%= f.label :admin, "管理者", value: true, class: 'text-dark' %>
-            <%= f.radio_button :admin, :false, disabled: true %> <!--ユーザラジオボタンを無効化-->
-          <% else %>
-            <%= f.radio_button :admin, :true %>
-            <%= f.label :admin, "管理者", value: true, class: 'text-dark' %>
-            <%= f.radio_button :admin, :false %>
-          <% end %>
-          
-            <%= f.label :admin, "ユーザ", value: false, class: 'text-dark' %>
+            <% if @user.id == current_user.id %>
+              <%= f.radio_button :admin, :true, disabled: true %> <!--管理者ラジオボタンを無効化-->
+              <%= f.label :admin, "管理者", value: true, class: 'text-dark' %>
+              <%= f.radio_button :admin, :false, disabled: true %> <!--ユーザラジオボタンを無効化-->
+              
+            <% else %>
+              <%= f.radio_button :admin, :true %>
+              <%= f.label :admin, "管理者", value: true, class: 'text-dark' %>
+              <%= f.radio_button :admin, :false %>
+            <% end %>
+            
+              <%= f.label :admin, "ユーザ", value: false, class: 'text-dark' %>
           </div>
           
           <%= f.submit "更新", class: 'btn btn-block btn-info' %>

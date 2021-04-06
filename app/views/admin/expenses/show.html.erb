@@ -37,7 +37,7 @@
             <tr>
               <th>申請状況</th>
               <td>
-                <% if @expense.approval == true %>
+                <% if @expense.approval %>
                   <p1>承認済</p1>
                 <% else %>
                   <p2>未承認</p2>
@@ -48,7 +48,8 @@
             <tr>
               <th>添付ファイル</th>
             　<td>
-                <% if @expense.attached_file.attached? %> <!--添付ファイルがある場合アイコンを押すとリンクに飛ぶ-->
+            　   <!--添付ファイルがある場合アイコンを押すとリンクに飛ぶ-->
+                <% if @expense.attached_file.attached? %>
                   <%= link_to @expense.attached_file do %>
                   <%= image_tag "icons/attached_file.png" %>
                   <% end %>
@@ -58,9 +59,12 @@
             
             <tr>
               <td>
-                <% if @expense.approval == true %> <!--経費データが承認済の場合-->
+                <!--経費データが承認済の場合-->
+                <% if @expense.approval %>
                   <%= button_to "承認取消", approval_admin_expense_path(@expense), method: :get %>
-                <% else %> <!--経費データが未承認の場合-->
+                  
+                <!--経費データが未承認の場合-->
+                <% else %>
                   <%= button_to "承認", approval_admin_expense_path(@expense), method: :get %>
                 <% end %>
               </td>

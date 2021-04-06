@@ -9,16 +9,19 @@ User.create!(name: "管理者",
 email: ENV['LOGIN_EMAIL'],
 password: ENV['LOGIN_PASSWORD'],
 password_confirmation: ENV['LOGIN_PASSWORD'],
+id: 1,
 admin: true)
 
 User.create!(name: "ゲスト管理者",
 email: ENV['TEST_ADMIN_EMAIL'],
 password: ENV['TEST_ADMIN_PASSWORD'],
 password_confirmation: ENV['TEST_ADMIN_PASSWORD'],
+id: 2,
 admin: true)
 
 User.create!(name: "テストユーザー",
 email: ENV['TEST_EMAIL'],
 password: ENV['TEST_PASSWORD'],
 password_confirmation: ENV['TEST_PASSWORD'],
+id: 3,
 admin: false)

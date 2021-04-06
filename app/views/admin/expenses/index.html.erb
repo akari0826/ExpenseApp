@@ -81,7 +81,7 @@
                 <td><%= expense.expense_detail %></td>
                 <td><%= expense.expense %><p style="display:inline">円</p></td>
                 <td>
-                  <% if expense.approval == true %>
+                  <% if expense.approval %>
                     <p1>承認済</p1>
                   <% else %>
                     <p2>未承認</p2>

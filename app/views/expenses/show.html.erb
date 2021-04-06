@@ -37,8 +37,11 @@
             <tr>
               <th>申請状況</th>
               <td>
-                <% if @expense.approval == true %>
+                <!--@expense.approvalがtrue = 経費が承認済-->
+                <% if @expense.approval %>
                   <p1>承認済</p1>
+                  
+                <!--@expense.approvalがfalse = 経費が未承認-->
                 <% else %>
                   <p2>未承認</p2>
                 <% end %>

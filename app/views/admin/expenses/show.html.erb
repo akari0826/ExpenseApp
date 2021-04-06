@@ -37,8 +37,11 @@
             <tr>
               <th>申請状況</th>
               <td>
+                <!--@expense.approvalがtrue = 経費が承認済-->
                 <% if @expense.approval %>
                   <p1>承認済</p1>
+                
+                <!--@expense.approvalがfalse = 経費が未承認-->
                 <% else %>
                   <p2>未承認</p2>
                 <% end %>
@@ -48,8 +51,7 @@
             <tr>
               <th>添付ファイル</th>
             　<td>
-            　   <!--添付ファイルがある場合アイコンを押すとリンクに飛ぶ-->
-                <% if @expense.attached_file.attached? %>
+                <% if @expense.attached_file.attached? %> <!--添付ファイルがある場合アイコンを押すとリンクに飛ぶ-->
                   <%= link_to @expense.attached_file do %>
                   <%= image_tag "icons/attached_file.png" %>
                   <% end %>

@@ -28,15 +28,19 @@ class Admin::ExpensesController < ApplicationController
   end
   
   def approval
-    if @expense.approval == true #承認済データが取消された場合
+    # 承認済データが取消された場合
+    if @expense.approval
       @expense.approval = false
       
-      @user = Expense.find(params[:id]).user #経費を登録したユーザを出す
+      # 管理者が承認取消した際に経費を登録したユーザに送信される
+      @user = Expense.find(params[:id]).user
       UserMailer.with(user: @user).approval_cancellation_email.deliver
       
-    else #未承認データが承認された場合
+    # 未承認データが承認された場合
+    else
       @expense.approval = true
       
+      # 管理者が承認した際に経費を登録したユーザに送信される
       @user = Expense.find(params[:id]).user
       UserMailer.with(user: @user).approval_email.deliver
     end

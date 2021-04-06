@@ -14,7 +14,8 @@ class ExpensesController < ApplicationController
     @expense = current_user.expenses.new(expense_params)
     if @expense.save
       
-      @user = User.find_by(admin: true) #管理者adminをtrueで出す
+      # ユーザが申請した際に@user=管理者に送信される
+      @user = User.find_by(admin: true)
       UserMailer.with(user: @user).application_email.deliver
       
       redirect_to expenses_url, success: '経費データ登録に成功しました'
@@ -33,6 +34,7 @@ class ExpensesController < ApplicationController
   def update
     if @expense.update(expense_params)
       
+      # ユーザが申請を更新した際に@user=管理者に送信される
       @user = User.find_by(admin: true)
       UserMailer.with(user: @user).application_email.deliver
       

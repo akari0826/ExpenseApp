@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       # 管理者の場合
       if user.admin
         redirect_to admin_expenses_url, success: '管理者としてログインに成功しました'
+        
       # 一般ユーザの場合
       else
         redirect_to expenses_url, success: 'ログインに成功しました'

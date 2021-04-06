@@ -81,16 +81,20 @@
                 <td><%= expense.expense_detail %></td>
                 <td><%= expense.expense %><p style="display:inline">円</p></td>
                 <td>
+                  <!--expense.approvalがtrue = 経費が承認済-->
                   <% if expense.approval %>
                     <p1>承認済</p1>
+                    
+                  <!--expense.approvalがfalse = 経費が未承認-->
                   <% else %>
                     <p2>未承認</p2>
                   <% end %>
                 </td>
                 <td>
+                  <!--添付ファイルがある場合アイコンを押すとリンクに飛ぶ-->
                   <% if expense.attached_file.attached? %>
                     <%= link_to expense.attached_file do %>
-                      <%= image_tag "icons/attached_file.png" %>
+                    <%= image_tag "icons/attached_file.png" %>
                     <% end %>
                   <% end %> 
                 </td>

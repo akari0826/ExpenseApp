@@ -22,7 +22,8 @@
             </tbody>
           <% end %>
         </table>
-      <%= link_to "経費カテゴリ登録", new_admin_expense_category_path %>
+        <%= button_to "経費カテゴリ登録", new_admin_expense_category_path, method: :get %>
+      <%= paginate @expense_categories %>
     </div>
   </div>
 </div>

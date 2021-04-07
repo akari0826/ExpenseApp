@@ -48,8 +48,8 @@
                 <td><%= user.name %></td>
                 <td><%= user.email %></td>
                 <td>
-                  <!--userが管理者・ゲスト管理者・テストユーザどれでもない場合のみ「編集」「削除」出力-->
-                  <% if !(user.id == 1 || user.id == 2 || user.id == 3) %>
+                  <!--userが管理者・ゲスト管理者・テストユーザどれでもない場合 OR ログインしているのが管理者の場合「編集」「削除」出力-->
+                  <% if !(user.id == 1 || user.id == 2 || user.id == 3) || current_user.id == 1 %>
                     <%= link_to "編集", edit_admin_user_path(user) %>
                     <%= link_to "削除", admin_user_path(user), method: :delete, data: 
                                                               { confirm: "削除してよろしいですか？",

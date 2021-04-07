@@ -3,7 +3,7 @@ class Admin::ExpenseCategoriesController < ApplicationController
   before_action :set_expense_category, only: [:show, :edit, :update]
   
   def index
-    @expense_categories = ExpenseCategory.all
+    @expense_categories = ExpenseCategory.includes(:expenses).page(params[:page]).per(5)
   end
   
   def new

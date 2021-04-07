@@ -19,7 +19,7 @@ password_confirmation: ENV['TEST_ADMIN_PASSWORD'],
 id: 2,
 admin: true)
 
-User.create!(name: "テストユーザー",
+User.create!(name: "山田太郎",
 email: ENV['TEST_EMAIL'],
 password: ENV['TEST_PASSWORD'],
 password_confirmation: ENV['TEST_PASSWORD'],

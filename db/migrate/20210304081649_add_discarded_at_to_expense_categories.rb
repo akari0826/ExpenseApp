@@ -1,6 +1,8 @@
 class AddDiscardedAtToExpenseCategories < ActiveRecord::Migration[5.2]
   def change
-    add_column :expense_categories, :discarded_at, :datetime
+    change_table :expenses_categories, bulk: true do |t|
+      t.datetime :discarded_at
+    end
     add_index :expense_categories, :discarded_at
   end
 end

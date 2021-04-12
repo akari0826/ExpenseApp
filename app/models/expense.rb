@@ -9,13 +9,7 @@ class Expense < ApplicationRecord
   validates :expense_detail,
             presence: true,
             length: { maximum: 15, message: "を15字以内で入力してください" }
-  validates :expense,
-            presence: true,
-            numericality: {
-              only_integer: true, # 整数のみ許可；全角数字は弾かれる
-              allow_blank: true, # nilや空文字にバリデーションがパス
-              message: "を半角数字で入力してください"
-            }
+  validates :expense, presence: true
   validates :attached_file, presence: true # gemでバリデーションできるように
   
   # アソシエーション

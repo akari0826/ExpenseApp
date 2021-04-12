@@ -46,7 +46,7 @@
                 <td><%= expense.user.name %></td>
                 <td><%= expense.expense_category.name %></td>
                 <td><%= expense.expense_detail %></td>
-                <td><%= expense.expense %><p style="display:inline">円</p></td>
+                <td><%= expense.expense.to_s(:delimited) %><p style="display:inline">円</p></td>
                 <td>
                   <!--expense.approvalがtrue = 経費が承認済-->
                   <% if expense.approval %>

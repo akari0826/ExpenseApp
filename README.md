@@ -1,12 +1,17 @@
 # 経費精算システム
   経費の申請・承認ができるWebアプリケーションです。<br>  
-  <img width="1440" alt="スクリーンショット 2021-04-03 20 09 28" src="https://user-images.githubusercontent.com/76086661/113476779-a77fdc80-94b8-11eb-84e9-3df857a2fb60.png">
+  <img width="1435" alt="トップページ" src="https://user-images.githubusercontent.com/76086661/114541969-5202b700-9c92-11eb-9591-9982bbf3adaa.png">
 
   アプリURL：https://pure-lake-08669.herokuapp.com/ <br>
   ゲストログイン・ゲスト管理者ログインボタンからメールアドレスとパスワードを入力せずにログインできます。
 
-# 使用技術
+# 要件定義
+- 前職で毎月の旅費精算が紙媒体での申請だった不便さを感じ、Web申請ができるシステムがあったらと考え「経費精算システム」を制作
+- 社員がメールアドレスとパスワードでログイン
+- →毎月の交通費などの経費を申請
+- →管理者である上司が承認
 
+# 使用技術
 ### OS
 - Mac
 - Amazon Linux

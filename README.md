@@ -9,7 +9,7 @@
 
 ### OS
 - Mac
-- Linux（RedHatディストリビューション）
+- Amazon Linux
 
 ### 言語
 - HTML
@@ -25,7 +25,7 @@
 ### DB
 - MySQL 5.7
 
-### その他ミドルウェア、サーバなど
+### その他
 - Cloud9
 - Git
 

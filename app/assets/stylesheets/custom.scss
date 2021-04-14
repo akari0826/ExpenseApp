@@ -22,19 +22,30 @@ span.navbar-brand.md-0 {
 
 .top-hero-wrapper {
   text-align: center;
+  display: inline-block;
 }
+  .container {
+    padding: 0px;
+  }
 
 .top-hero-container {
   padding-top: 250px;
-  text-align: center;
+  display: inline-block;
   
   h1 {
     font-size: 56px;
     margin-bottom: 20px;
   }
   
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  
   .row2 {
     padding-top: 50px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
 

@@ -128,7 +128,7 @@ span.navbar-brand.md-0 {
   background-color: #fff;
   
   nav {
-    text-align :center;
+    text-align: center;
   }
   
   img {
@@ -170,8 +170,13 @@ span.navbar-brand.md-0 {
   }
   
   .table {
-    margin: 20px auto;
+    // width: 50%;
   }
+  
+  // .table2 {
+  //   margin: 0px auto;
+  //   width: 100%;
+  // }
 }
 
 td, th {

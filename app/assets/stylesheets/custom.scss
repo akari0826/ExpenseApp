@@ -154,8 +154,12 @@ span.navbar-brand.md-0 {
 }
 
 .expense-detail-wrapper {
-  padding-top: 130px;
+  padding-top: 100px;
   background-color: #fff;
+  
+  h1 {
+    margin-bottom: 50px;
+  }
   
   img {
     height: 25px;
@@ -170,13 +174,23 @@ span.navbar-brand.md-0 {
   }
   
   .table {
-    // width: 50%;
+    margin-bottom: 150px;
   }
   
-  // .table2 {
-  //   margin: 0px auto;
-  //   width: 100%;
-  // }
+  .user {
+    width: 35%;
+    float: left;
+  }
+  
+  .approval {
+    width: 15%;
+    float: right;
+  }
+  
+  .approval2 {
+    width: 25%;
+    float: right;
+  }
 }
 
 td, th {

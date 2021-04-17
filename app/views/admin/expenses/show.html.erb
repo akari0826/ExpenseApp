@@ -37,7 +37,6 @@
             <% end %>
           </td>
           <td>
-<<<<<<< HEAD
             <!--経費データが承認済の場合-->
             <% if @expense.approval %>
               <%= button_to "承認取消", approval_admin_expense_path(@expense), method: :get %>
@@ -46,16 +45,6 @@
             <% else %>
               <%= button_to "承認", approval_admin_expense_path(@expense), method: :get %>
             <% end %>
-=======
-                <!--経費データが承認済の場合-->
-                <% if @expense.approval %>
-                  <%= button_to "承認取消", approval_admin_expense_path(@expense), method: :get %>
-                  
-                <!--経費データが未承認の場合-->
-                <% else %>
-                  <%= button_to "承認", approval_admin_expense_path(@expense), method: :get %>
-                <% end %>
->>>>>>> d926432bfbba29bad36146db402459f522821798
           </td>
         </tbody>
       </table>

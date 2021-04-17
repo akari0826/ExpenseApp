@@ -37,18 +37,19 @@
             <% end %>
           </td>
           <td>
-                <!--経費データが承認済の場合-->
-                <% if @expense.approval %>
-                  <%= button_to "承認取消", approval_admin_expense_path(@expense), method: :get %>
+            <!--経費データが承認済の場合-->
+            <% if @expense.approval %>
+              <%= button_to "承認取消", approval_admin_expense_path(@expense), method: :get %>
                   
-                <!--経費データが未承認の場合-->
-                <% else %>
-                  <%= button_to "承認", approval_admin_expense_path(@expense), method: :get %>
-                <% end %>
+            <!--経費データが未承認の場合-->
+            <% else %>
+              <%= button_to "承認", approval_admin_expense_path(@expense), method: :get %>
+            <% end %>
           </td>
         </tbody>
       </table>
       
+      <!--経費詳細-->
       <table class="table table-striped table-bordered">
         <thead>
           <tr class="table-info">
@@ -83,9 +84,8 @@
                     commit: "削除",
                     cancel: "キャンセル" }, title: "削除の確認" %>
               </td>
-            </tr>
-          </tbody>
-
+          </tr>
+        </tbody>
       </table>
       
     </div>

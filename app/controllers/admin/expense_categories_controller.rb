@@ -1,6 +1,6 @@
 class Admin::ExpenseCategoriesController < ApplicationController
   before_action :if_not_admin
-  before_action :set_expense_category, only: [:show, :edit, :update]
+  before_action :set_expense_category, only: [:edit, :update]
   
   def index
     @expense_categories = ExpenseCategory.includes(:expenses).page(params[:page]).per(5)
@@ -18,9 +18,6 @@ class Admin::ExpenseCategoriesController < ApplicationController
       flash.now[:danger] = '経費カテゴリ登録に失敗しました'
       render :new
     end
-  end
-  
-  def show
   end
   
   def edit

@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :name, presence: true,
                    length: { maximum: 15 }
   
-  VALID_EMAIL_REGEX = /[a-z]+@[a-z]+\.[a-z]+/ # [~ @ ~ . ~]の形を許可
+  VALID_EMAIL_REGEX = /[a-zA-Z0-9_.+-]+@[a-z]+\.[a-z]+/ # [~ @ ~ . ~]の形を許可
   validates :email, presence: true,
                     format: { with: VALID_EMAIL_REGEX, allow_blank: true } # nilや空文字にバリデーションがパス
   

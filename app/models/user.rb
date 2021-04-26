@@ -22,6 +22,7 @@ class User < ApplicationRecord
                          message: "を半角英数字で入力してください"
                        }, on: :create # 新規登録の時のみバリデーション
   
+  # アソシエーション
   has_many :expenses
   has_many_attached :attached_files
   

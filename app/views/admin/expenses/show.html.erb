@@ -78,8 +78,8 @@
                 <% end %> 
               </td>
               <td>
-                <%= link_to "編集", edit_admin_expense_path(@expense) %>
-                <%= link_to "削除", admin_expense_path, method: :delete, data:
+                <%= button_to "編集", edit_admin_expense_path(@expense), method: :get %>
+                <%= button_to "削除", admin_expense_path(@expense), method: :delete, data:
                   { confirm: "削除してよろしいですか？",
                     commit: "削除",
                     cancel: "キャンセル" }, title: "削除の確認" %>

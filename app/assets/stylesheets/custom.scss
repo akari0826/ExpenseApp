@@ -191,6 +191,10 @@ span.navbar-brand.md-0 {
     width: 25%;
     float: right;
   }
+  
+  .button_to {
+    display: inline-block;
+  }
 }
 
 td, th {
@@ -270,6 +274,10 @@ td, th {
   padding-top: 180px;
   background-color: #fff;
   text-align: center;
+  
+  .button_to {
+    display: inline-block;
+  }
 }
 
 .category-new-wrapper {
@@ -341,6 +349,10 @@ td, th {
       margin-bottom: 20px;
       text-align: left;
     }
+  }
+  
+  .button_to {
+    display: inline-block;
   }
 }
 

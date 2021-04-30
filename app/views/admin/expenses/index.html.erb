@@ -73,7 +73,7 @@
           <tbody>
             <tr>
               <th scope="row"><%= expense.id %></th>
-                <td><%= expense.application_date %></td>
+                <td><%= expense.application_date.to_s.gsub('-', '/') %></td>
                 <td><%= expense.user.name %></td>
                 <td><%= expense.expense_category.name %></td>
                 <td><%= expense.expense.to_s(:delimited) %><p style="display:inline">円</p></td>

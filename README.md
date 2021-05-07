@@ -1,6 +1,6 @@
 # 経費精算システム
   経費の申請・承認ができるWebアプリケーションです。<br>  
-  <img width="1433" alt="トップページ" src="https://user-images.githubusercontent.com/76086661/114688094-58a33400-9d4f-11eb-8211-2a9edd1a41cd.png">
+  <img width="1433" alt="トップページ" src="https://user-images.githubusercontent.com/76086661/114688094-58a33400-9d4f-11eb-8211-2a9edd1a41cd.png">
 
   アプリURL：https://pure-lake-08669.herokuapp.com/ <br>
   ゲストログイン・ゲスト管理者ログインボタンからメールアドレスとパスワードを入力せずにログインできます。

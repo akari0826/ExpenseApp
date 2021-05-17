@@ -31,7 +31,12 @@ RSpec.describe User, type: :model do
     expect(user.errors[:email]).to include("既に使われています")
   end
   
-  it "パスワードがなければ無効な状態であること"
-  it "重複したメールアドレスなら無効な状態であること"
-  it "ユーザのフルネームを文字列として返すこと"
+  it "パスワードがなければ無効な状態であること" do
+  end
+  
+  it "重複したメールアドレスなら無効な状態であること" do
+  end
+  
+  it "ユーザのフルネームを文字列として返すこと" do
+  end
 end

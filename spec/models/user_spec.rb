@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
       password: "mypassword123",
       )
     user = User.new(
-      name: "加藤夏樹",
+      name: "加藤和樹",
       email: "katonatsuki9@gmail.com",
       password: "mypassword123",
       )

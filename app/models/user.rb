@@ -9,6 +9,7 @@ class User < ApplicationRecord
   
   VALID_EMAIL_REGEX = /[a-zA-Z0-9_.+-]+@[a-z\d\-.]+\.[a-z]+/ # [~ @ ~ . ~]の形を許可
   validates :email, presence: true,
+                    uniqueness: true,
                     format: { with: VALID_EMAIL_REGEX, allow_blank: true } # nilや空文字にバリデーションがパス
   
   has_secure_password

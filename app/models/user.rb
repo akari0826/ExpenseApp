@@ -10,14 +10,14 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /[a-zA-Z0-9_.+-]+@[a-z\d\-.]+\.[a-z]+/ # [~ @ ~ . ~]の形を許可
   validates :email, presence: true,
                     uniqueness: true,
-                    format: { with: VALID_EMAIL_REGEX, allow_blank: true } # nilや空文字にバリデーションがパス
+                    format: { with: VALID_EMAIL_REGEX, allow_blank: true } # nilや空文字にバリデーションがパス(エラーメッセージ重複防止)
   
   has_secure_password
   
   VALID_PASSWORD_REGEX = /(?=.*[a-z])(?=.*[0-9])\A[a-z0-9]+\z/i # 半角英数字のみ許可
   validates :password, presence: true,
                        length: { in: 8..32 },
-                       allow_blank: true, # nilや空文字にバリデーションがパス
+                       allow_blank: true, # nilや空文字にバリデーションがパス(エラーメッセージ重複防止)
                        format: {
                          with: VALID_PASSWORD_REGEX,
                          message: "を半角英数字で入力してください"

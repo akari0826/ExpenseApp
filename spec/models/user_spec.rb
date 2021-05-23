@@ -1,11 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it "名前、メールアドレス、パスワードがあれば有効な状態であること" do
+  it "名前、メールアドレス、パスワード、パスワード（確認用）があれば有効な状態であること" do
     user = User.new(
       name: "加藤夏樹",
       email: "katonatsuki9@gmail.com",
-      password: "mypassword123"
+      password: "mypassword123",
+      password_confirmation: "mypassword123"
       )
     expect(user).to be_valid
   end
@@ -64,6 +65,10 @@ RSpec.describe User, type: :model do
   it "パスワードが8〜32文字以上なら無効な状態であること"
   it "パスワードの正規表現が適切なら有効な状態であること"
   it "パスワードの正規表現が不適切なら無効な状態であること"
-  it "パスワード（確認用）があれば有効な状態であること"
-  it "パスワード（確認用）がなければ無効な状態であること"
+  # it "パスワード（確認用）がなければ無効な状態であること" do
+  #   user = User.new(password_confirmation: nil)
+  #   user.valid?
+  #   expect(user.errors[:password_confirmation]).to include("パスワード（確認用）とパスワードの入力が一致しません")
+  # end
+  
 end

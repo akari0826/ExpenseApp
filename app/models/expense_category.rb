@@ -3,7 +3,8 @@ class ExpenseCategory < ApplicationRecord
   include Discard::Model
   default_scope -> { kept }
   
-  validates :name, presence: true
+  validates :name, presence: true,
+                   length: { maximum: 20, message: :word_limit }
   
   has_many :expenses
 end

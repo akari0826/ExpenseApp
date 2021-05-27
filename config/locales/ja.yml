@@ -19,31 +19,16 @@ ja:
     
     errors:
       models:
-        user:
-          attributes:
-            name:
-              blank: "を入力してください"
-            email:
-              blank: "を入力してください"
-            password:
-              blank: "を入力してください"
-            password_confirmation:
-              blank: "を入力してください"
-              
         expense:
           attributes:
-            application_date:
-              blank: "を入力してください"
-            expense_category_id:
-              blank: "を入力してください"
             expense_detail:
-              blank: "を入力してください"
-            expense:
-              blank: "を入力してください"
+              word_limit: "を15字以内で入力してください"
             attached_file:
               blank: "をアップロードしてください"
+              message: "を20MB以下で登録してください"
               
         expense_category:
           attributes:
             name:
-              blank: "を入力してください"
+              word_limit: "を20字以内で入力してください"
+              

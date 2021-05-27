@@ -7,11 +7,11 @@ class Expense < ApplicationRecord
   validates :application_date, presence: true
   validates :expense_category_id, presence: true
   validates :expense_detail, presence: true, 
-                             length: { maximum: 15, message: "を15字以内で入力してください" }
+                             length: { maximum: 15, message: :word_limit }
   validates :expense, presence: true
   validates :attached_file, presence: true, # gemでバリデーションできるように
-                            blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], 
-                            maximum: 20.megabytes, message: "を20MB以下で登録してください" }
+                            blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg', 'application/pdf'],
+                            maximum: 20.megabytes }
   
   # アソシエーション
   belongs_to :user

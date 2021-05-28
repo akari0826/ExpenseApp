@@ -19,13 +19,18 @@ ja:
     
     errors:
       models:
+        user:
+          attributes:
+            name: "名前"
+              word_limit: "を15字以内で入力してください"
         expense:
           attributes:
             expense_detail:
               word_limit: "を15字以内で入力してください"
             attached_file:
               blank: "をアップロードしてください"
-              message: "を20MB以下で登録してください"
+              # file_format: "をPNG,JPG,JPEG,PDF形式でアップロードしてください"
+              # file_size: "を20MB以下でアップロードしてください"
               
         expense_category:
           attributes:

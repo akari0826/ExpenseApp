@@ -5,7 +5,7 @@ class User < ApplicationRecord
   
   # バリデーション
   validates :name, presence: true,
-                   length: { maximum: 15 }
+                   length: { maximum: 15, message: :word_limit }
   
   VALID_EMAIL_REGEX = /[a-zA-Z0-9_.+-]+@[a-z\d\-.]+\.[a-z]+/ # [~ @ ~ . ~]の形を許可
   validates :email, presence: true,

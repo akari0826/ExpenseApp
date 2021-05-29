@@ -94,6 +94,7 @@
           </tbody>
         <% end %>
       </table>
+      <%= pie_chart Expense.group(:expense_category).count %>
      <%= paginate @expenses %>
   </div>
 </div>

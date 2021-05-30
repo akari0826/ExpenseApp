@@ -23,14 +23,14 @@ ja:
           attributes:
             name:
               word_limit: "を15字以内で入力してください"
+            password:
+              pass_limit: "を半角英数字で入力してください"
         expense:
           attributes:
             expense_detail:
               word_limit: "を15字以内で入力してください"
             attached_file:
               blank: "をアップロードしてください"
-              # file_format: "をPNG,JPG,JPEG,PDF形式でアップロードしてください"
-              # file_size: "を20MB以下でアップロードしてください"
               
         expense_category:
           attributes:

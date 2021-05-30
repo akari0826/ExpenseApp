@@ -20,7 +20,7 @@ class User < ApplicationRecord
                        allow_blank: true, # nilや空文字にバリデーションがパス(エラーメッセージ重複防止)
                        format: {
                          with: VALID_PASSWORD_REGEX,
-                         message: "を半角英数字で入力してください"
+                         message: :pass_limit
                        }, on: :create # 新規登録の時のみバリデーション
   
   # アソシエーション

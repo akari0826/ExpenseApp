@@ -94,7 +94,8 @@
           </tbody>
         <% end %>
       </table>
-      <!--%= pie_chart Expense.group(:expense_category).count %>-->
+      <%= pie_chart Expense.group_by_month(:application_date).sum(:expense) %>
+      
      <%= paginate @expenses %>
   </div>
 </div>

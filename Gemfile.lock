@@ -135,6 +135,8 @@ GEM
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (5.2.2)
+      activesupport (>= 5)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
     io-like (0.3.1)
@@ -351,6 +353,7 @@ DEPENDENCIES
   discard (~> 1.2)
   dotenv-rails
   fog-aws
+  groupdate
   jbuilder (~> 2.5)
   jquery-rails
   kaminari

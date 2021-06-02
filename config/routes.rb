@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :expenses do
       member do
         get 'approval'
+        get 'analysis'
       end
     end  
   end

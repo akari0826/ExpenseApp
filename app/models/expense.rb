@@ -11,7 +11,7 @@ class Expense < ApplicationRecord
   validates :expense, presence: true
   validates :attached_file, presence: true, # gemでバリデーションできるように
                             blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg', 'application/pdf'],
-                            maximum: 0.megabytes }
+                            maximum: 20.megabytes }
   
   # アソシエーション
   belongs_to :user

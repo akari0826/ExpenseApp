@@ -49,6 +49,11 @@ class Admin::ExpensesController < ApplicationController
     redirect_to admin_expenses_path(@expense), info: '申請状況を更新しました' 
   end
   
+  def analysis
+    # binding.pry
+    @expenses = Expense.includes(:user)
+  end
+  
   private
   def expense_params
     params.require(:expense).permit(:application_date, :expense_category_id, :expense_detail, :expense, :attached_file, :approval)

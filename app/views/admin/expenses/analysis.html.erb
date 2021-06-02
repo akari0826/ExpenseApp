@@ -1,5 +1,11 @@
-<div class="admin-expense-index-wrapper">
+<div class="admin-expense-analysis-wrapper">
   <div class="container">
     <h1 class="text-center">分析</h1><br>
+    <h2>カテゴリ別経費合計</h2>
+      <%= pie_chart Expense.joins(:expense_category).group('expense_categories.name').sum(:expense), donut: true, thousands: "," %><br>
+    <h2>月別経費合計</h2>
+      <%= column_chart Expense.group_by_month(:application_date, format: "%Y年 %b").sum(:expense), thousands: ",", height: "500px" %><br>
+    <h2>年別経費合計</h2>
+      <%= column_chart Expense.group_by_year(:application_date, format: "%Y年").sum(:expense), thousands: ",", height: "500px" %><br>
   </div>
 </div>

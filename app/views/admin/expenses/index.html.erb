@@ -94,9 +94,11 @@
           </tbody>
         <% end %>
       </table>
+      <%= button_to "CSV出力", admin_expenses_path(format: :csv), method: :get %>
+      
       <%= column_chart Expense.group_by_month(:application_date, format: "%Y年 %b").sum(:expense), thousands: "," %>
       <%= column_chart Expense.group_by_year(:application_date, format: "%Y年").sum(:expense), thousands: "," %>
-      <%= pie_chart Expense.eager_load(:expense_category).group(:'expense_category.id').count, donut: true, thousands: "," %>
+      <!--%= pie_chart Expense.eager_load(:expense_category).group(:'expense_category.id').count, donut: true, thousands: "," %>-->
       <!--%= pie_chart Expense.group(:expense_category_id).group %>-->
       <!--%= ExpenseCategory.includes(:expense).all.map {|e| [e.name, e.expense] }.to_h %>-->
       

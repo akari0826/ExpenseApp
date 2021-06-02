@@ -3,8 +3,16 @@ class Admin::ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update, :approval]
   
   def index
-    #N+1問題/検索/ページネーション
+    # N+1問題/検索/ページネーション
     @expenses = Expense.includes(:user).search(expense_search_params).page(params[:page]).per(10)
+    
+    # CSVファイル
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data render_to_string, filename: "expenses.csv", type: :csv
+      end
+    end
   end
   
   def show

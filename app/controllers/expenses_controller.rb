@@ -4,6 +4,14 @@ class ExpensesController < ApplicationController
   def index
     #N+1問題/検索/ページネーション
     @expenses = current_user.expenses.includes(:user).search(expense_search_params).page(params[:page]).per(7)
+    
+    # CSVファイル
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data render_to_string, filename: "expenses.csv", type: :csv
+      end
+    end
   end
   
   def new

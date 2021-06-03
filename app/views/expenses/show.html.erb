@@ -67,11 +67,13 @@
                 <% end %> 
               </td>
               <td>
-                <%= button_to "編集", edit_expense_path(@expense), method: :get %>
-                <%= button_to "削除", expense_path(@expense), method: :delete, data: 
-                  { confirm: "削除してよろしいですか？",
-                    commit: "削除",
-                    cancel: "キャンセル" }, title: "削除の確認" %>
+                <% if !@expense.approval %> <!--承認済み経費データを編集できないように-->
+                  <%= button_to "編集", edit_expense_path(@expense), method: :get %>
+                <% end %>
+                  <%= button_to "削除", expense_path(@expense), method: :delete, data: 
+                    { confirm: "削除してよろしいですか？",
+                      commit: "削除",
+                      cancel: "キャンセル" }, title: "削除の確認" %>
               </td>
           </tr>
         </tbody>

@@ -56,7 +56,7 @@
         <% end %>
       </div>
     </div>
-      <%= button_to "CSVダウンロード", admin_expenses_path(format: :csv), method: :get %><br>
+      <%= button_to "CSVダウンロード", admin_expenses_path(@expenses, format: :csv), method: :get %><br>
       
       <table class="table table-striped table-bordered">
         <thead>

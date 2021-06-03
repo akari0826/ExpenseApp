@@ -1,18 +1,11 @@
 class Admin::ExpensesController < ApplicationController
   before_action :if_not_admin
   before_action :set_expense, only: [:show, :edit, :update, :approval]
+  require 'csv'
   
   def index
     # N+1問題/検索/ページネーション
     @expenses = Expense.includes(:user).search(expense_search_params).page(params[:page]).per(10)
-    
-    # CSVファイル
-    respond_to do |format|
-      format.html
-      format.csv do
-        send_data render_to_string, filename: "expenses.csv", type: :csv
-      end
-    end
   end
   
   def show
@@ -60,6 +53,35 @@ class Admin::ExpensesController < ApplicationController
   def analysis
     # binding.pry
     @expenses = Expense.includes(:user)
+  end
+  
+  def csv_download
+    @expenses = Expense.includes(:user)
+    # CSVファイル
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_csv(@expenses)
+      end
+    end
+    render :index
+  end
+  
+  def send_csv(expenses)
+    CSV.generate do |csv|
+      csv_column_names = %w(申請日 申請者 経費カテゴリ 経費詳細 金額)
+      csv << csv_column_names
+      @expenses.each do |expense|
+        csv_column_values = [
+          expense.application_date,
+          expense.user.name,
+          expense.expense_category.name,
+          expense.expense_detail,
+          expense.expense.to_s(:delimited)
+        ]
+        csv << csv_column_values
+      end
+    end
   end
   
   private

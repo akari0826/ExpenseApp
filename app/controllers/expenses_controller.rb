@@ -1,17 +1,10 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update]
+  require 'csv'
   
   def index
     #N+1問題/検索/ページネーション
     @expenses = current_user.expenses.includes(:user).search(expense_search_params).page(params[:page]).per(7)
-    
-    # CSVファイル
-    respond_to do |format|
-      format.html
-      format.csv do
-        send_data render_to_string, filename: "expenses.csv", type: :csv
-      end
-    end
   end
   
   def new
@@ -57,7 +50,36 @@ class ExpensesController < ApplicationController
     Expense.find(params[:id]).discard
     redirect_to expenses_url, success: '経費データを削除しました'
   end
-    
+  
+  def csv_download
+    @expenses = current_user.expenses.includes(:user)
+    # CSVファイル
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_csv(@expenses)
+      end
+    end
+    render :index
+  end
+  
+  def send_csv(expenses)
+    CSV.generate do |csv|
+      csv_column_names = %w(申請日 申請者 経費カテゴリ 経費詳細 金額)
+      csv << csv_column_names
+      @expenses.each do |expense|
+        csv_column_values = [
+          expense.application_date,
+          expense.user.name,
+          expense.expense_category.name,
+          expense.expense_detail,
+          expense.expense.to_s(:delimited)
+        ]
+        csv << csv_column_values
+      end
+    end
+  end
+  
   private
   def expense_params
     params.require(:expense).permit(:application_date, :expense_category_id, :expense_detail, :expense, :attached_file)

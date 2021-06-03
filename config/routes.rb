@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post    '/login',   to: 'sessions#create'
   delete  '/logout',  to: 'sessions#destroy'
   
+  get 'analysis', to: 'admin/expenses#analysis'
+  
   resources :users, only: [:new, :create]
   
   resources :expenses
@@ -19,7 +21,6 @@ Rails.application.routes.draw do
     resources :expenses do
       member do
         get 'approval'
-        get 'analysis'
       end
     end  
   end

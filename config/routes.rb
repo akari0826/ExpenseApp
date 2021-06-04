@@ -22,7 +22,7 @@ Rails.application.routes.draw do
       member do
         get 'approval'
       end
-    end  
+    end
   end
   
 end

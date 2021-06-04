@@ -73,7 +73,7 @@ end
 
 #Herokuで使うPostgreSQL用の設定
 group :production do
-  gem 'pg'
+  # gem 'pg'
   gem 'unicorn'
   gem 'dotenv-rails'
 end

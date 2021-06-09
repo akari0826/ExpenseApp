@@ -11,7 +11,7 @@ class ExpensesController < ApplicationController
      format.csv do
        send_data render_to_string, filename: "expenses.csv", type: :csv
      end
-   end
+    end
   end
   
   def new

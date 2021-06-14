@@ -29,16 +29,16 @@
   - ログイン機能
 - 経費データ管理
   - 経費データ登録・編集・削除機能
-  - PDF・画像アップロード機能（Active Storage）
-  - 承認メール機能（Action Mailer）
+  - PDF・画像アップロード機能(Active Storage)
+  - 承認メール機能(Action Mailer)
 - 管理者機能
   - 管理者権限変更
   - 承認・承認取消ボタン
 - 追加実装
   - 検索機能
   - 並べ替え機能
-  - ページネーション機能（kaminari）
-  - 論理削除（discard）
+  - ページネーション機能(kaminari)
+  - 論理削除(discard)
   - CSVファイルのエクスポート機能
   - 経費データのグラフ化(chartkick, groupdate)
 - 今後実装したいもの

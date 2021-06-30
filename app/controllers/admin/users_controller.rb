@@ -20,7 +20,7 @@ class Admin::UsersController < ApplicationController
   end
   
   def destroy
-    User.find(params[:id]).undiscard
+    User.find(params[:id]).discard
     redirect_to admin_users_url, success: 'ユーザーを削除しました'
   end
   

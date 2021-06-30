@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # 論理削除
-  # include Discard::Model
-  # default_scope -> { kept }
+  include Discard::Model
+  default_scope -> { kept }
   
   # バリデーション
   validates :name, presence: true,

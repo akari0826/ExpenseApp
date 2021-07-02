@@ -2,6 +2,7 @@ class Expense < ApplicationRecord
   # 論理削除
   include Discard::Model
   default_scope -> { kept }
+  # scope :kept, -> { undiscarded.joins(:user).merge(User.kept) }
   
   # バリデーション
   validates :application_date, presence: true

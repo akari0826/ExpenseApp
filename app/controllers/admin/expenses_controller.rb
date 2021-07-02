@@ -6,6 +6,8 @@ class Admin::ExpensesController < ApplicationController
   def index
     # N+1問題/検索/ページネーション
     @expenses = Expense.includes(:user).search(expense_search_params).page(params[:page]).per(10)
+    # 論理削除されたuser_id一覧
+    @user_ids = User.with_discarded.discarded.map{ |v| v.id }
     # CSVファイル
     respond_to do |format|
      format.html

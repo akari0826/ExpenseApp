@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_current_user
-  helper_method :current_user, :logged_in?, :current_user?
+  helper_method :current_user, :logged_in?, :current_user?, :check_name
   add_flash_types :success, :info, :warning, :danger
   
   def set_current_user
@@ -24,6 +24,10 @@ class ApplicationController < ActionController::Base
       flash[:notice] = "ログインが必要です"
       redirect_to("/login")
     end
+  end
+  
+  def check_name(id)
+    User.with_discarded.discarded.find(id).name
   end
   
   private

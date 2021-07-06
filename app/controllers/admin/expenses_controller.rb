@@ -6,8 +6,13 @@ class Admin::ExpensesController < ApplicationController
   def index
     # N+1問題/検索/ページネーション
     @expenses = Expense.includes(:user).search(expense_search_params).page(params[:page]).per(10)
-    # 論理削除されたuser_id一覧
-    @user_ids = User.with_discarded.discarded.map{ |v| v.id }
+    # 論理削除されたuser_idとユーザnameのhash
+    # @user_ids = User.with_discarded.discarded.map{ |v| v.id }
+    @user_id_hash = {}
+    user_discarded_obj = User.with_discarded.discarded
+    user_discarded_obj.each do |user|
+        @user_id_hash[user.id] = user.name
+    end
     # CSVファイル
     respond_to do |format|
      format.html
@@ -18,6 +23,11 @@ class Admin::ExpensesController < ApplicationController
   end
   
   def show
+    @user_id_hash = {}
+    user_discarded_obj = User.with_discarded.discarded
+    user_discarded_obj.each do |user|
+        @user_id_hash[user.id] = user.name
+    end
   end
   
   def edit

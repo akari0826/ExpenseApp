@@ -75,11 +75,14 @@
             <tr>
               <th scope="row"><%= expense.id %></th>
                 <td><%= expense.application_date.to_s.gsub('-', '/') %></td>
-              <% if @user_ids.include?(expense.user_id) %>
-                <td><%= check_name(expense.user_id) %></td>
+                
+              <!--hashに申請したユーザのidが入っているか-->
+              <% if @user_id_hash.key?(expense.user_id) %>
+                <td><%= @user_id_hash[expense.user_id] %></td>
               <% else %>
                 <td><%= expense.user.name %></td>
               <% end %>
+              
                 <td><%= expense.expense_category.name %></td>
                 <td><%= expense.expense.to_s(:delimited) %><p style="display:inline">円</p></td>
                 <td>

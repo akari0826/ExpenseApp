@@ -12,8 +12,15 @@
           </tr>
         </thead>
         <tbody>
-          <th scope="row"><%= @expense.user.id %></th>
+          <%# binding.pry %>
+          <!--hashに申請したユーザのidが入っているか-->
+          <% if @user_id_hash.key?(@expense.user_id) %>
+            <th scope="row"><%= @user_id_hash.key() %></th>
+            <td><%= @user_id_hash[@expense.user_id] %></td>
+          <% else %>
+            <th scope="row"><%= @expense.user.id %></th>
             <td><%= @expense.user.name %></td>
+          <% end %>
         </tbody>
       </table>
       
